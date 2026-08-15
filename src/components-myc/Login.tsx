@@ -365,7 +365,7 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess, language, onLangua
                         animate={{ scale: 1, y: 0 }}
                         exit={{ scale: 0.95, y: 20 }}
                         className="bg-[#09090b] border border-white/10 rounded-3xl w-full max-w-md max-h-[80vh] flex flex-col shadow-2xl overflow-hidden ring-1 ring-white/5"
-                        onClick={(e) => e.stopPropagation()}
+                        onClick={(e: React.MouseEvent) => e.stopPropagation()}
                     >
                         <div className="p-6 border-b border-white/5 flex items-center justify-between bg-white/5">
                             <div className="flex items-center gap-3">
