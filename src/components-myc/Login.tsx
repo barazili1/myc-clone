@@ -100,7 +100,7 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess, language, onLangua
                     }}
                     className="flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 px-4 py-2 rounded-full text-xs font-bold text-zinc-300 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all shadow-lg group"
                 >
-                    <Globe className="w-3.5 h-3.5 text-green-500 group-hover:rotate-12 transition-transform" />
+                    <Globe className="w-3.5 h-3.5 text-purple-500 group-hover:rotate-12 transition-transform" />
                     <span className="uppercase tracking-wider">{language}</span>
                     <ChevronDown className={`w-3 h-3 text-zinc-500 transition-transform duration-300 ${isLangMenuOpen ? 'rotate-180' : ''}`} />
                 </button>
@@ -122,12 +122,12 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess, language, onLangua
                                     }}
                                     className={`
                                         flex items-center gap-3 px-4 py-3 text-xs font-bold transition-all text-left relative
-                                        ${language === lang.code ? 'bg-white/5 text-green-400' : 'text-zinc-400 hover:text-white hover:bg-white/5'}
+                                        ${language === lang.code ? 'bg-white/5 text-purple-400' : 'text-zinc-400 hover:text-white hover:bg-white/5'}
                                     `}
                                 >
                                     <span className="text-sm shadow-sm grayscale">{lang.flag}</span>
                                     <span className="flex-1">{lang.label}</span>
-                                    {language === lang.code && <div className="w-1.5 h-1.5 rounded-full bg-green-500" />}
+                                    {language === lang.code && <div className="w-1.5 h-1.5 rounded-full bg-purple-500" />}
                                 </button>
                             ))}
                         </MotionDiv>
@@ -160,14 +160,14 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess, language, onLangua
                                 />
                             </div>
                             {/* Glow behind logo */}
-                            <div className="absolute inset-0 bg-green-500 blur-2xl opacity-20" />
+                            <div className="absolute inset-0 bg-purple-500 blur-2xl opacity-20" />
                         </div>
                         
                         <h2 className="text-3xl font-black text-white tracking-tighter mb-2">
-                            EL HETAN <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">V1</span>
+                            EL HETAN <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-600">V1</span>
                         </h2>
                         <div className="flex items-center gap-2">
-                             <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                             <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" />
                              <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-[0.2em]">{t.systemOnline}</span>
                         </div>
                     </div>
@@ -176,13 +176,13 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess, language, onLangua
                     <form onSubmit={handleLogin} className="flex flex-col gap-6">
                         <div className="space-y-2">
                             <label className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest pl-1 flex items-center gap-1.5">
-                                <Binary className="w-3 h-3 text-green-500/50" />
+                                <Binary className="w-3 h-3 text-purple-500/50" />
                                 {t.licenseKey}
                             </label>
                             
                             <div className="relative group">
-                                <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-transparent rounded-xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-zinc-600 group-focus-within:text-green-500 transition-colors duration-300">
+                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent rounded-xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-zinc-600 group-focus-within:text-purple-500 transition-colors duration-300">
                                     <Key className="w-5 h-5" />
                                 </div>
                                 <input
@@ -193,7 +193,7 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess, language, onLangua
                                         setError(null);
                                     }}
                                     placeholder="XXXX-XXXX-XXXX-XXXX"
-                                    className="w-full bg-[#050505] border border-white/10 group-focus-within:border-green-500/30 rounded-xl py-4 pl-12 pr-12 text-white placeholder:text-zinc-800 focus:outline-none transition-all font-mono text-sm tracking-[0.15em] shadow-inner focus:shadow-[0_0_20px_rgba(34,197,94,0.1)]"
+                                    className="w-full bg-[#050505] border border-white/10 group-focus-within:border-purple-500/30 rounded-xl py-4 pl-12 pr-12 text-white placeholder:text-zinc-800 focus:outline-none transition-all font-mono text-sm tracking-[0.15em] shadow-inner focus:shadow-[0_0_20px_rgba(168,85,247,0.1)]"
                                     autoCapitalize="none"
                                     spellCheck="false"
                                 />
@@ -235,18 +235,18 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess, language, onLangua
                     <div className="mt-6 w-full">
                         <button
                             onClick={handleCopyPromo}
-                            className="w-full relative group overflow-hidden rounded-xl bg-zinc-900/30 border border-dashed border-zinc-700/50 hover:border-green-500/50 p-3 transition-all active:scale-[0.98]"
+                            className="w-full relative group overflow-hidden rounded-xl bg-zinc-900/30 border border-dashed border-zinc-700/50 hover:border-purple-500/50 p-3 transition-all active:scale-[0.98]"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                             
                             <div className="relative flex items-center justify-between">
                                 <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-lg bg-black/50 border border-white/5 flex items-center justify-center group-hover:border-green-500/30 transition-colors">
-                                        <Ticket className="w-5 h-5 text-zinc-400 group-hover:text-green-500 transition-colors" />
+                                    <div className="w-10 h-10 rounded-lg bg-black/50 border border-white/5 flex items-center justify-center group-hover:border-purple-500/30 transition-colors">
+                                        <Ticket className="w-5 h-5 text-zinc-400 group-hover:text-purple-500 transition-colors" />
                                     </div>
                                     <div className="flex flex-col items-start">
                                         <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-wider">Promocode</span>
-                                        <span className="text-base font-black text-white font-mono tracking-widest group-hover:text-green-400 transition-colors">XKX11</span>
+                                        <span className="text-base font-black text-white font-mono tracking-widest group-hover:text-purple-400 transition-colors">XKX11</span>
                                     </div>
                                 </div>
                                 
@@ -255,7 +255,7 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess, language, onLangua
                                         {isPromoCopied ? 'COPIED' : 'COPY'}
                                     </span>
                                     {isPromoCopied ? (
-                                        <Check className="w-4 h-4 text-green-500" />
+                                        <Check className="w-4 h-4 text-purple-500" />
                                     ) : (
                                         <Copy className="w-4 h-4 text-zinc-500 group-hover:text-white transition-colors" />
                                     )}
@@ -319,7 +319,7 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess, language, onLangua
                             
                             <div className="absolute inset-0 flex items-center justify-center">
                                 {keyNameFound ? (
-                                    <ShieldCheck className="w-8 h-8 text-green-500 animate-in zoom-in duration-300" />
+                                    <ShieldCheck className="w-8 h-8 text-purple-500 animate-in zoom-in duration-300" />
                                 ) : (
                                     <Shield className="w-8 h-8 text-zinc-700 animate-pulse" />
                                 )}
@@ -330,7 +330,7 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess, language, onLangua
                             {keyNameFound ? t.welcome : t.processing}
                         </h3>
                         
-                        <p className={`text-xs font-mono transition-colors duration-300 ${keyNameFound ? 'text-green-500 font-bold' : 'text-zinc-500'}`}>
+                        <p className={`text-xs font-mono transition-colors duration-300 ${keyNameFound ? 'text-purple-500 font-bold' : 'text-zinc-500'}`}>
                             {keyNameFound ? 'ACCESS GRANTED' : loadingText}
                         </p>
                         
@@ -339,9 +339,9 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess, language, onLangua
                                 <MotionDiv 
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
-                                    className="mt-8 px-6 py-3 bg-green-500/10 border border-green-500/20 rounded-full"
+                                    className="mt-8 px-6 py-3 bg-purple-500/10 border border-purple-500/20 rounded-full"
                                 >
-                                    <span className="text-xs font-bold text-green-400 tracking-wider">{keyNameFound}</span>
+                                    <span className="text-xs font-bold text-purple-400 tracking-wider">{keyNameFound}</span>
                                 </MotionDiv>
                             )}
                         </AnimatePresence>
@@ -369,8 +369,8 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess, language, onLangua
                     >
                         <div className="p-6 border-b border-white/5 flex items-center justify-between bg-white/5">
                             <div className="flex items-center gap-3">
-                                <div className="p-2 bg-green-500/10 rounded-lg">
-                                    <FileText className="w-4 h-4 text-green-500" />
+                                <div className="p-2 bg-purple-500/10 rounded-lg">
+                                    <FileText className="w-4 h-4 text-purple-500" />
                                 </div>
                                 <h3 className="font-bold text-white uppercase tracking-wider text-sm">{t.tosTitle}</h3>
                             </div>

@@ -319,7 +319,7 @@ export const AppleGame: React.FC<AppleGameProps> = ({ onBack, accessKeyData, lan
 
   // Difficulty Config
   const difficultyModes = [
-      { id: 'Easy', icon: Shield, color: 'text-green-500', bg: 'bg-green-500', shadow: 'shadow-green-500/20' },
+      { id: 'Easy', icon: Shield, color: 'text-purple-500', bg: 'bg-purple-500', shadow: 'shadow-purple-500/20' },
       { id: 'Medium', icon: Zap, color: 'text-yellow-500', bg: 'bg-yellow-500', shadow: 'shadow-yellow-500/20' },
       { id: 'Hard', icon: Skull, color: 'text-red-500', bg: 'bg-red-500', shadow: 'shadow-red-500/20' },
   ];
@@ -332,8 +332,8 @@ export const AppleGame: React.FC<AppleGameProps> = ({ onBack, accessKeyData, lan
             <div className="bg-[#151518]/90 backdrop-blur border border-white/5 rounded-full px-5 py-2 flex items-center gap-6 shadow-xl z-50">
                 <div className="flex flex-col items-center leading-none">
                      <div className="flex items-center gap-1.5 mb-1">
-                        <Clock className="w-3 h-3 text-green-500" />
-                        <span className="text-[10px] font-bold text-green-400 tracking-wider">
+                        <Clock className="w-3 h-3 text-purple-500" />
+                        <span className="text-[10px] font-bold text-purple-400 tracking-wider">
                             {timeLeft}
                         </span>
                      </div>
@@ -358,7 +358,7 @@ export const AppleGame: React.FC<AppleGameProps> = ({ onBack, accessKeyData, lan
         <div className="flex items-center justify-between mb-4 px-2">
             <div className="flex flex-col">
                 <h1 className="text-3xl font-black text-white leading-none tracking-tight flex items-center gap-2">
-                    APPLE <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">FORTUNE</span>
+                    APPLE <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-violet-600">FORTUNE</span>
                 </h1>
                 <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-[0.2em] mt-1 flex items-center gap-1.5">
                     <Grid3X3 className="w-3 h-3" />
@@ -471,15 +471,15 @@ export const AppleGame: React.FC<AppleGameProps> = ({ onBack, accessKeyData, lan
                          <Cpu className="w-8 h-8 text-white" />
                      </div>
                      <div className="flex items-center gap-2 mb-1">
-                         <div className={`w-1.5 h-1.5 rounded-full ${gameState === GameState.ANALYZING ? 'bg-green-500 animate-pulse' : 'bg-zinc-600'}`} />
+                         <div className={`w-1.5 h-1.5 rounded-full ${gameState === GameState.ANALYZING ? 'bg-purple-500 animate-pulse' : 'bg-zinc-600'}`} />
                          <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-wider">{t.aiAnalysis}</span>
                          {currentResult && (
-                             <span className="ml-auto text-[9px] font-mono text-green-400">{currentResult.confidence}% CONFIDENCE</span>
+                             <span className="ml-auto text-[9px] font-mono text-purple-400">{currentResult.confidence}% CONFIDENCE</span>
                          )}
                      </div>
                      <p className="text-[10px] font-mono text-zinc-300 leading-tight line-clamp-2">
                         {gameState === GameState.ANALYZING ? (
-                            <span className="text-green-400 animate-pulse">{t.processingMatrix}</span>
+                            <span className="text-purple-400 animate-pulse">{t.processingMatrix}</span>
                         ) : currentResult ? (
                             currentResult.analysis
                         ) : (
@@ -498,7 +498,7 @@ export const AppleGame: React.FC<AppleGameProps> = ({ onBack, accessKeyData, lan
                             relative w-full h-14 rounded-xl overflow-hidden font-black tracking-[0.2em] uppercase text-sm transition-all duration-200 group flex items-center justify-center gap-3
                             ${gameState === GameState.ANALYZING 
                                 ? 'bg-zinc-800 text-zinc-600 cursor-not-allowed border border-white/5 opacity-80' 
-                                : 'bg-gradient-to-r from-green-600 to-emerald-500 text-white hover:from-green-500 hover:to-emerald-400 shadow-lg shadow-green-900/20 active:scale-[0.99]'}
+                                : 'bg-gradient-to-r from-purple-600 to-violet-500 text-white hover:from-purple-500 hover:to-violet-400 shadow-lg shadow-purple-900/20 active:scale-[0.99]'}
                         `}
                     >
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
@@ -590,8 +590,8 @@ export const AppleGame: React.FC<AppleGameProps> = ({ onBack, accessKeyData, lan
                                                     </span>
                                                 </div>
                                                 <div className="flex items-center gap-2">
-                                                    <div className="px-1.5 py-0.5 bg-green-500/10 rounded border border-green-500/20">
-                                                        <span className="text-xs font-bold text-green-500">{h.confidence}%</span>
+                                                    <div className="px-1.5 py-0.5 bg-purple-500/10 rounded border border-purple-500/20">
+                                                        <span className="text-xs font-bold text-purple-500">{h.confidence}%</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -617,7 +617,7 @@ export const AppleGame: React.FC<AppleGameProps> = ({ onBack, accessKeyData, lan
                     >
                         <div className="flex items-center justify-between p-4 border-b border-white/5 bg-white/5">
                             <div className="flex items-center gap-2">
-                                <Terminal className="w-4 h-4 text-green-500" />
+                                <Terminal className="w-4 h-4 text-purple-500" />
                                 <h3 className="text-sm font-bold text-white tracking-wide">AI ANALYSIS PROTOCOL</h3>
                             </div>
                             <button onClick={closeAnalysis} className="p-1 hover:bg-white/10 rounded-lg transition-colors">
@@ -627,7 +627,7 @@ export const AppleGame: React.FC<AppleGameProps> = ({ onBack, accessKeyData, lan
                         
                         <div className="p-6 font-mono text-sm leading-relaxed text-zinc-300 min-h-[200px] max-h-[60vh] overflow-y-auto bg-[#0c0c0e]">
                             {gameState === GameState.ANALYZING ? (
-                                <div className="flex flex-col items-center justify-center h-full gap-3 text-green-500">
+                                <div className="flex flex-col items-center justify-center h-full gap-3 text-purple-500">
                                     <div className="w-6 h-6 border-2 border-current border-t-transparent rounded-full animate-spin" />
                                     <span className="animate-pulse">{t.decryptingPattern}</span>
                                 </div>
@@ -644,13 +644,13 @@ export const AppleGame: React.FC<AppleGameProps> = ({ onBack, accessKeyData, lan
                                         </div>
                                         <div className="flex flex-col">
                                             <span className="uppercase text-[10px] font-bold tracking-wider text-zinc-600">{t.confidence}</span>
-                                            <span className="font-mono text-green-400">{currentResult.confidence}%</span>
+                                            <span className="font-mono text-purple-400">{currentResult.confidence}%</span>
                                         </div>
                                     </div>
                                     
-                                    <div className="bg-green-900/5 border border-green-900/20 p-4 rounded-lg">
-                                        <p className="text-green-100/90 leading-7">
-                                            <span className="text-green-500 font-bold mr-2">›</span>
+                                    <div className="bg-purple-900/5 border border-purple-900/20 p-4 rounded-lg">
+                                        <p className="text-purple-100/90 leading-7">
+                                            <span className="text-purple-500 font-bold mr-2">›</span>
                                             {currentResult.analysis}
                                         </p>
                                     </div>

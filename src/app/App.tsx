@@ -35,7 +35,7 @@ const AVATARS = [
     { id: 2, icon: Skull, color: 'text-red-400', bg: 'bg-red-900/40' },
     { id: 3, icon: Crown, color: 'text-yellow-400', bg: 'bg-yellow-900/40' },
     { id: 4, icon: Zap, color: 'text-blue-400', bg: 'bg-blue-900/40' },
-    { id: 5, icon: Bot, color: 'text-green-400', bg: 'bg-green-900/40' },
+    { id: 5, icon: Bot, color: 'text-purple-400', bg: 'bg-purple-900/40' },
     { id: 6, icon: Smile, color: 'text-pink-400', bg: 'bg-pink-900/40' },
     { id: 7, icon: Shield, color: 'text-cyan-400', bg: 'bg-cyan-900/40' },
     { id: 8, icon: Gamepad2, color: 'text-orange-400', bg: 'bg-orange-900/40' },
@@ -45,7 +45,7 @@ const AVATARS = [
     { id: 12, icon: Target, color: 'text-red-400', bg: 'bg-red-900/40' },
     { id: 13, icon: Cpu, color: 'text-cyan-400', bg: 'bg-cyan-900/40' },
     { id: 14, icon: Fingerprint, color: 'text-violet-400', bg: 'bg-violet-900/40' },
-    { id: 15, icon: Eye, color: 'text-emerald-400', bg: 'bg-emerald-900/40' },
+    { id: 15, icon: Eye, color: 'text-violet-400', bg: 'bg-violet-900/40' },
 ];
 
 const AVATAR_CONFIGS = [
@@ -54,7 +54,7 @@ const AVATAR_CONFIGS = [
     { color: "from-orange-400 to-orange-600", border: "border-orange-500", bg: "bg-orange-900/20" }, // Bronze
     { color: "from-purple-400 to-purple-600", border: "border-purple-500", bg: "bg-purple-900/20" },
     { color: "from-blue-400 to-blue-600", border: "border-blue-500", bg: "bg-blue-900/20" },
-    { color: "from-green-400 to-green-600", border: "border-green-500", bg: "bg-green-900/20" },
+    { color: "from-purple-400 to-purple-600", border: "border-purple-500", bg: "bg-purple-900/20" },
     { color: "from-red-400 to-red-600", border: "border-red-500", bg: "bg-red-900/20" },
 ];
 
@@ -591,13 +591,13 @@ export const App: React.FC = () => {
                             className="flex items-center gap-3 cursor-pointer group"
                             onClick={() => { playSound('click'); selectGame('PROFILE'); }}
                         >
-                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-zinc-800 to-zinc-900 border border-white/10 flex items-center justify-center shadow-lg relative group-hover:border-green-500/50 transition-colors overflow-hidden">
+                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-zinc-800 to-zinc-900 border border-white/10 flex items-center justify-center shadow-lg relative group-hover:border-purple-500/50 transition-colors overflow-hidden">
                                 <div className={`absolute inset-0 ${currentAvatar.bg} opacity-20`} />
                                 <UserAvatarIcon className={`w-5 h-5 ${currentAvatar.color} relative z-10 group-hover:scale-110 transition-transform`} />
-                                <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#09090b] rounded-full z-20"></div>
+                                <div className="absolute bottom-0 right-0 w-3 h-3 bg-purple-500 border-2 border-[#09090b] rounded-full z-20"></div>
                             </div>
                             <div className="flex flex-col">
-                                <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider group-hover:text-green-500 transition-colors">{t.welcomeBack}</span>
+                                <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider group-hover:text-purple-500 transition-colors">{t.welcomeBack}</span>
                                 <span className="text-sm font-bold text-white">{userProfile.username}</span>
                             </div>
                         </div>
@@ -623,7 +623,7 @@ export const App: React.FC = () => {
                         >
                              <div className="flex items-center justify-between">
                                  <div className="flex items-center gap-1.5 text-zinc-500">
-                                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                                     <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
                                      <span className="text-[9px] font-bold uppercase tracking-wider">{t.onlineUsers}</span>
                                  </div>
                              </div>
@@ -632,7 +632,7 @@ export const App: React.FC = () => {
                              </div>
                              <div className="h-1 w-full bg-zinc-800 rounded-full overflow-hidden mt-auto">
                                  <MotionDiv 
-                                    className="h-full bg-green-500" 
+                                    className="h-full bg-purple-500" 
                                     animate={{ width: `${Math.random() * 40 + 40}%` }}
                                     transition={{ duration: 2 }}
                                  />
@@ -663,16 +663,16 @@ export const App: React.FC = () => {
 
                     <div 
                         onClick={() => selectGame('LIVE_ANALYTICS')}
-                        className="mb-6 mx-4 p-5 rounded-3xl bg-gradient-to-b from-[#151518] to-[#0c0c0e] border border-white/5 shadow-2xl relative overflow-hidden group cursor-pointer hover:border-green-500/20 transition-all"
+                        className="mb-6 mx-4 p-5 rounded-3xl bg-gradient-to-b from-[#151518] to-[#0c0c0e] border border-white/5 shadow-2xl relative overflow-hidden group cursor-pointer hover:border-purple-500/20 transition-all"
                     >
                         <div className="flex items-center justify-between mb-6 relative z-10">
                             <h2 className="text-sm font-bold text-white flex items-center gap-2">
                                 <Activity className="w-4 h-4 text-purple-500" />
                                 {t.liveAnalytics}
                             </h2>
-                            <div className="flex items-center gap-1.5 bg-green-500/10 px-2 py-1 rounded border border-green-500/20">
-                                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                                <span className="text-[9px] font-bold text-green-500 uppercase tracking-wide">
+                            <div className="flex items-center gap-1.5 bg-purple-500/10 px-2 py-1 rounded border border-purple-500/20">
+                                <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
+                                <span className="text-[9px] font-bold text-purple-500 uppercase tracking-wide">
                                     {t.systemActive}
                                 </span>
                             </div>
@@ -700,14 +700,14 @@ export const App: React.FC = () => {
                                      <MotionDiv 
                                         animate={{ height: `${metrics.signal}%` }} 
                                         transition={{ type: "spring", bounce: 0, duration: 1.5 }}
-                                        className="w-full bg-gradient-to-t from-green-500/10 to-green-500/40 border-t border-green-500/50 rounded-lg relative"
+                                        className="w-full bg-gradient-to-t from-purple-500/10 to-purple-500/40 border-t border-purple-500/50 rounded-lg relative"
                                      >
-                                         <div className="absolute inset-x-0 top-0 h-[1px] bg-green-400 shadow-[0_0_15px_#22c55e]" />
+                                         <div className="absolute inset-x-0 top-0 h-[1px] bg-purple-400 shadow-[0_0_15px_#a855f7]" />
                                      </MotionDiv>
                                  </div>
                                  <div className="flex flex-col items-center">
                                      <span className="text-[9px] text-zinc-500 font-bold uppercase">{t.signal}</span>
-                                     <span className="text-[10px] font-mono text-green-400">{Math.round(metrics.signal)}%</span>
+                                     <span className="text-[10px] font-mono text-purple-400">{Math.round(metrics.signal)}%</span>
                                  </div>
                              </div>
                              
@@ -738,20 +738,20 @@ export const App: React.FC = () => {
                             {/* APPLE GAME */}
                             <button 
                                 onClick={() => selectGame('APPLE')}
-                                className="group relative h-28 rounded-2xl bg-[#121214] border border-white/5 hover:border-green-500/50 transition-all duration-300 overflow-hidden shadow-xl hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]"
+                                className="group relative h-28 rounded-2xl bg-[#121214] border border-white/5 hover:border-purple-500/50 transition-all duration-300 overflow-hidden shadow-xl hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]"
                             >
-                                <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
-                                <div className="absolute bottom-0 left-0 w-full h-1 bg-green-500 opacity-50 group-hover:opacity-100 transition-opacity" />
+                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
+                                <div className="absolute bottom-0 left-0 w-full h-1 bg-purple-500 opacity-50 group-hover:opacity-100 transition-opacity" />
                                 
                                 <div className="relative h-full flex flex-col justify-between p-4">
-                                    <div className="w-10 h-10 rounded-xl bg-zinc-900/80 border border-white/5 flex items-center justify-center text-green-500 group-hover:scale-110 transition-transform shadow-lg">
+                                    <div className="w-10 h-10 rounded-xl bg-zinc-900/80 border border-white/5 flex items-center justify-center text-purple-500 group-hover:scale-110 transition-transform shadow-lg">
                                         <LayoutGrid className="w-5 h-5" />
                                     </div>
                                     <div className="text-left">
                                         <h4 className="font-black text-white text-sm tracking-wide">{t.appleFortune}</h4>
                                         <div className="flex items-center gap-1.5 mt-1">
-                                            <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                                            <p className="text-[9px] text-green-400 font-bold uppercase tracking-wider">{t.online}</p>
+                                            <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" />
+                                            <p className="text-[9px] text-purple-400 font-bold uppercase tracking-wider">{t.online}</p>
                                         </div>
                                     </div>
                                     <ChevronRight className="absolute top-4 right-4 w-4 h-4 text-white/20 group-hover:text-white transition-colors" />
@@ -833,27 +833,27 @@ export const App: React.FC = () => {
                         {/* CHAT SUPPORT CARD */}
                         <button 
                             onClick={() => selectGame('CHAT_SUPPORT')}
-                            className="group relative h-20 w-full rounded-2xl bg-[#121214] border border-white/5 hover:border-green-500/30 transition-all duration-300 overflow-hidden shadow-xl hover:shadow-[0_0_20px_rgba(34,197,94,0.1)] mt-3"
+                            className="group relative h-20 w-full rounded-2xl bg-[#121214] border border-white/5 hover:border-purple-500/30 transition-all duration-300 overflow-hidden shadow-xl hover:shadow-[0_0_20px_rgba(168,85,247,0.1)] mt-3"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-r from-green-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                            <div className="absolute left-0 top-0 bottom-0 w-1 bg-green-500 opacity-50 group-hover:opacity-100 transition-opacity" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-purple-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <div className="absolute left-0 top-0 bottom-0 w-1 bg-purple-500 opacity-50 group-hover:opacity-100 transition-opacity" />
                             
                             <div className="relative h-full flex items-center px-5 gap-4">
-                                <div className="w-10 h-10 rounded-xl bg-zinc-900/80 border border-white/5 flex items-center justify-center text-green-500 group-hover:scale-110 transition-transform shadow-lg">
+                                <div className="w-10 h-10 rounded-xl bg-zinc-900/80 border border-white/5 flex items-center justify-center text-purple-500 group-hover:scale-110 transition-transform shadow-lg">
                                     <MessageSquare className="w-5 h-5" />
                                 </div>
                                 <div className="flex-1 text-left">
                                     <div className="flex items-center gap-2">
                                         <h4 className="font-bold text-white text-sm tracking-wide">{t.chatSupport}</h4>
                                         <span className="flex h-2 w-2 relative">
-                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                                            <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
                                         </span>
                                     </div>
                                     <p className="text-[10px] text-zinc-500 font-mono mt-0.5">{t.chatOnline}</p>
                                 </div>
                                 <div className="flex flex-col items-end gap-1">
-                                        <span className="px-1.5 py-0.5 rounded bg-zinc-900 border border-white/5 text-[9px] font-bold text-green-500 uppercase">24/7</span>
+                                        <span className="px-1.5 py-0.5 rounded bg-zinc-900 border border-white/5 text-[9px] font-bold text-purple-500 uppercase">24/7</span>
                                         <ChevronRight className="w-4 h-4 text-zinc-700 group-hover:text-white transition-colors" />
                                 </div>
                             </div>
@@ -944,7 +944,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className={`min-h-screen bg-[#09090b] text-white overflow-x-hidden selection:bg-green-500/30 ${getFontClass()}`}>
+    <div className={`min-h-screen bg-[#09090b] text-white overflow-x-hidden selection:bg-purple-500/30 ${getFontClass()}`}>
       
       {/* REDESIGNED STARTUP SPLASH SCREEN (Minimalist High-Tech) */}
       <AnimatePresence>
@@ -957,7 +957,7 @@ export const App: React.FC = () => {
              >
                  {/* Cinematic Void Background */}
                  <div className="absolute inset-0 bg-[#000000]" />
-                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.05)_0%,transparent_50%)]" />
+                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.05)_0%,transparent_50%)]" />
 
                  {/* Central Identity Module */}
                  <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-xs">
@@ -969,7 +969,7 @@ export const App: React.FC = () => {
                         transition={{ duration: 1, ease: "easeOut" }}
                         className="relative mb-8"
                      >
-                         <div className="w-28 h-28 rounded-3xl bg-gradient-to-br from-[#121214] to-[#000000] border border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(34,197,94,0.15)] relative overflow-hidden group">
+                         <div className="w-28 h-28 rounded-3xl bg-gradient-to-br from-[#121214] to-[#000000] border border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(168,85,247,0.15)] relative overflow-hidden group">
                              <img 
                                 src="https://image2url.com/images/1764758379533-1ae857ea-7b7e-4472-bbca-b12e4553cd7f.jpg" 
                                 alt="EH V1" 
@@ -977,7 +977,7 @@ export const App: React.FC = () => {
                              />
                              {/* Scan Line */}
                              <motion.div
-                                className="absolute inset-x-0 h-[2px] bg-green-500/50 shadow-[0_0_10px_#22c55e]"
+                                className="absolute inset-x-0 h-[2px] bg-purple-500/50 shadow-[0_0_10px_#a855f7]"
                                 animate={{ top: ["0%", "100%"] }}
                                 transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
                              />
@@ -996,7 +996,7 @@ export const App: React.FC = () => {
                          </motion.h1>
                          
                          <div className="flex flex-col items-center gap-1">
-                             <div className="h-[1px] w-12 bg-green-500/50" />
+                             <div className="h-[1px] w-12 bg-purple-500/50" />
                              <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-[0.3em]">
                                  Quantum Prediction Engine
                              </span>
@@ -1006,7 +1006,7 @@ export const App: React.FC = () => {
                      {/* Loading Bar & Logs */}
                      <div className="w-full space-y-3">
                          <div className="flex justify-between items-end px-1">
-                             <span className="text-[8px] font-mono text-green-500/80 uppercase tracking-wider animate-pulse">
+                             <span className="text-[8px] font-mono text-purple-500/80 uppercase tracking-wider animate-pulse">
                                  {BOOT_SEQUENCE[bootLogIndex]}
                              </span>
                              <span className="text-[9px] font-bold text-white font-mono">
@@ -1016,7 +1016,7 @@ export const App: React.FC = () => {
                          
                          <div className="h-[2px] w-full bg-zinc-900 overflow-hidden relative">
                              <motion.div 
-                                 className="absolute inset-y-0 left-0 bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]"
+                                 className="absolute inset-y-0 left-0 bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.8)]"
                                  style={{ width: `${bootProgress}%` }}
                              />
                          </div>
@@ -1117,8 +1117,8 @@ export const App: React.FC = () => {
                          <div className="relative">
                             <MessageSquare className="w-5 h-5" />
                             <span className="absolute -top-0.5 -right-0.5 flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
                             </span>
                         </div>
                         <span className="text-[9px] font-bold uppercase tracking-wider">{t.chatSupport}</span>
@@ -1169,13 +1169,13 @@ export const App: React.FC = () => {
                             </div>
 
                             {MOCK_HASHES.map((item) => (
-                                <div key={item.id} className={`p-3 rounded-xl border ${item.active ? 'bg-[#121214] border-green-500/30' : 'bg-zinc-900/50 border-white/5'}`}>
+                                <div key={item.id} className={`p-3 rounded-xl border ${item.active ? 'bg-[#121214] border-purple-500/30' : 'bg-zinc-900/50 border-white/5'}`}>
                                     <div className="flex items-center justify-between mb-2">
                                         <div className="flex items-center gap-2">
                                             {item.active ? (
-                                                <div className="flex items-center gap-1.5 px-1.5 py-0.5 rounded bg-green-500/10 border border-green-500/20">
-                                                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                                                    <span className="text-[9px] font-bold text-green-400 uppercase">Active Seed</span>
+                                                <div className="flex items-center gap-1.5 px-1.5 py-0.5 rounded bg-purple-500/10 border border-purple-500/20">
+                                                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" />
+                                                    <span className="text-[9px] font-bold text-purple-400 uppercase">Active Seed</span>
                                                 </div>
                                             ) : (
                                                 <span className="text-[9px] font-bold text-zinc-600 uppercase">Archived</span>
@@ -1196,7 +1196,7 @@ export const App: React.FC = () => {
                                             className="p-1.5 hover:bg-white/10 rounded-md transition-colors"
                                         >
                                             {copiedHashId === item.id ? (
-                                                <Check className="w-3 h-3 text-green-500" />
+                                                <Check className="w-3 h-3 text-purple-500" />
                                             ) : (
                                                 <Copy className="w-3 h-3 text-zinc-500 hover:text-white" />
                                             )}
@@ -1232,7 +1232,7 @@ export const App: React.FC = () => {
                         >
                             EL HETAN V1
                         </motion.h2>
-                        <div className="h-0.5 w-16 bg-green-500/50 mx-auto mt-2 rounded-full" />
+                        <div className="h-0.5 w-16 bg-purple-500/50 mx-auto mt-2 rounded-full" />
                      </div>
 
                      <div className="relative z-10 flex flex-col items-center gap-12 p-6 w-full max-w-sm">
@@ -1241,20 +1241,20 @@ export const App: React.FC = () => {
                         <div className="relative w-40 h-40 flex items-center justify-center">
                             {/* Static Rings for Performance */}
                             <div className="absolute inset-0 rounded-full border border-dashed border-zinc-700 opacity-30" />
-                            <div className="absolute inset-2 rounded-full border border-dotted border-green-500/20" />
+                            <div className="absolute inset-2 rounded-full border border-dotted border-purple-500/20" />
                             
                             {/* Glowing Core */}
-                            <div className="relative w-24 h-24 rounded-2xl bg-[#0c0c0e] border border-white/10 flex items-center justify-center shadow-[0_0_30px_rgba(34,197,94,0.1)] ring-1 ring-white/5 z-20">
+                            <div className="relative w-24 h-24 rounded-2xl bg-[#0c0c0e] border border-white/10 flex items-center justify-center shadow-[0_0_30px_rgba(168,85,247,0.1)] ring-1 ring-white/5 z-20">
                                  {(() => {
                                      switch(loadingGameKey) {
-                                         case 'APPLE': return <LayoutGrid className="w-10 h-10 text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]" />;
+                                         case 'APPLE': return <LayoutGrid className="w-10 h-10 text-purple-500 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]" />;
                                          case 'CRASH': return <Rocket className="w-10 h-10 text-orange-500 drop-shadow-[0_0_10px_rgba(249,115,22,0.5)]" />;
                                          case 'MINES': return <Bomb className="w-10 h-10 text-blue-500 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]" />;
                                          case 'WILD_WEST': return <Crosshair className="w-10 h-10 text-yellow-500 drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]" />;
-                                         case 'CHAT_SUPPORT': return <MessageSquare className="w-10 h-10 text-green-400 drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]" />;
+                                         case 'CHAT_SUPPORT': return <MessageSquare className="w-10 h-10 text-purple-400 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]" />;
                                          case 'PROFILE': return <Fingerprint className="w-10 h-10 text-purple-500 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]" />;
                                          case 'NOTIFICATIONS': return <Bell className="w-10 h-10 text-red-500 drop-shadow-[0_0_10px_rgba(239,68,68,0.5)]" />;
-                                         case 'USERS_ONLINE': return <Scan className="w-10 h-10 text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]" />;
+                                         case 'USERS_ONLINE': return <Scan className="w-10 h-10 text-purple-500 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]" />;
                                          case 'GET_CODE': return <Key className="w-10 h-10 text-blue-500 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]" />;
                                          default: return <Binary className="w-10 h-10 text-white" />;
                                      }
@@ -1270,8 +1270,8 @@ export const App: React.FC = () => {
                              
                              <div className="flex flex-col items-center gap-2 w-full">
                                  <div className="flex items-center gap-2">
-                                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                                     <span className="text-[10px] font-mono text-green-400 uppercase tracking-widest">
+                                     <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" />
+                                     <span className="text-[10px] font-mono text-purple-400 uppercase tracking-widest">
                                         {getLoadingText(gameLoadProgress)}
                                      </span>
                                  </div>
@@ -1284,7 +1284,7 @@ export const App: React.FC = () => {
                                          ))}
                                      </div>
                                      <motion.div 
-                                        className="h-full bg-gradient-to-r from-green-600 to-green-400 shadow-[0_0_10px_rgba(34,197,94,0.5)]"
+                                        className="h-full bg-gradient-to-r from-purple-600 to-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.5)]"
                                         initial={{ width: "0%" }}
                                         animate={{ width: `${gameLoadProgress}%` }}
                                         transition={{ ease: "linear" }}

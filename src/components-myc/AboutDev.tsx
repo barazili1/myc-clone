@@ -95,12 +95,12 @@ export const AboutDev: React.FC<AboutDevProps> = ({ onBack, language }) => {
                         </div>
                     </div>
 
-                    <div className="bg-[#0c0c0e] p-4 rounded-2xl border border-white/5 flex flex-col gap-3 group hover:border-green-500/20 transition-colors relative overflow-hidden">
+                    <div className="bg-[#0c0c0e] p-4 rounded-2xl border border-white/5 flex flex-col gap-3 group hover:border-purple-500/20 transition-colors relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-3 opacity-5">
                             <Shield className="w-12 h-12 text-white" />
                         </div>
-                        <div className="p-2 bg-green-500/10 rounded-lg w-fit">
-                            <Shield className="w-4 h-4 text-green-500" />
+                        <div className="p-2 bg-purple-500/10 rounded-lg w-fit">
+                            <Shield className="w-4 h-4 text-purple-500" />
                         </div>
                         <div>
                             <span className="text-xl font-black text-white">AES-256</span>
@@ -150,14 +150,14 @@ export const AboutDev: React.FC<AboutDevProps> = ({ onBack, language }) => {
                         <div className="space-y-1.5">
                             <div className="flex justify-between text-[10px] font-bold text-zinc-300 uppercase tracking-wide">
                                 <span>{t.predictiveMod}</span>
-                                <span className="text-green-400">92%</span>
+                                <span className="text-purple-400">92%</span>
                             </div>
                             <div className="h-1.5 w-full bg-zinc-900 rounded-full overflow-hidden border border-white/5">
                                 <motion.div 
                                     initial={{ width: 0 }}
                                     animate={{ width: "92%" }}
                                     transition={{ duration: 1, delay: 0.6 }}
-                                    className="h-full bg-green-500 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.5)]" 
+                                    className="h-full bg-purple-500 rounded-full shadow-[0_0_10px_rgba(168,85,247,0.5)]" 
                                 />
                             </div>
                         </div>

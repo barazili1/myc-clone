@@ -31,7 +31,7 @@ const AVATARS = [
     { id: 2, icon: Skull, color: 'text-red-400', bg: 'bg-red-900/40', border: 'border-red-500/50' },
     { id: 3, icon: Crown, color: 'text-yellow-400', bg: 'bg-yellow-900/40', border: 'border-yellow-500/50' },
     { id: 4, icon: Zap, color: 'text-blue-400', bg: 'bg-blue-900/40', border: 'border-blue-500/50' },
-    { id: 5, icon: Bot, color: 'text-green-400', bg: 'bg-green-900/40', border: 'border-green-500/50' },
+    { id: 5, icon: Bot, color: 'text-purple-400', bg: 'bg-purple-900/40', border: 'border-purple-500/50' },
     { id: 6, icon: Smile, color: 'text-pink-400', bg: 'bg-pink-900/40', border: 'border-pink-500/50' },
     { id: 7, icon: Shield, color: 'text-cyan-400', bg: 'bg-cyan-900/40', border: 'border-cyan-500/50' },
     { id: 8, icon: Gamepad2, color: 'text-orange-400', bg: 'bg-orange-900/40', border: 'border-orange-500/50' },
@@ -41,7 +41,7 @@ const AVATARS = [
     { id: 12, icon: Target, color: 'text-red-400', bg: 'bg-red-900/40', border: 'border-red-500/50' },
     { id: 13, icon: Cpu, color: 'text-cyan-400', bg: 'bg-cyan-900/40', border: 'border-cyan-500/50' },
     { id: 14, icon: Fingerprint, color: 'text-violet-400', bg: 'bg-violet-900/40', border: 'border-violet-500/50' },
-    { id: 15, icon: Eye, color: 'text-emerald-400', bg: 'bg-emerald-900/40', border: 'border-emerald-500/50' },
+    { id: 15, icon: Eye, color: 'text-violet-400', bg: 'bg-violet-900/40', border: 'border-violet-500/50' },
 ];
 
 export const Profile: React.FC<ProfileProps> = ({ 
@@ -248,7 +248,7 @@ export const Profile: React.FC<ProfileProps> = ({
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="flex-1 flex flex-col h-full overflow-y-auto pb-24 bg-[#050505] relative custom-scrollbar font-sans selection:bg-green-500/30"
+            className="flex-1 flex flex-col h-full overflow-y-auto pb-24 bg-[#050505] relative custom-scrollbar font-sans selection:bg-purple-500/30"
         >
             <div className="relative z-10 px-5 pt-6 max-w-md mx-auto w-full space-y-6">
                 
@@ -256,15 +256,15 @@ export const Profile: React.FC<ProfileProps> = ({
                 <MotionDiv variants={itemVariants} className="flex justify-between items-center bg-[#0c0c0e]/80 backdrop-blur-xl p-3 rounded-2xl border border-white/5 shadow-lg">
                     <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center relative overflow-hidden">
-                            <div className="absolute inset-0 bg-green-500/10 animate-pulse" />
-                            <Fingerprint className="w-5 h-5 text-green-500 relative z-10" />
+                            <div className="absolute inset-0 bg-purple-500/10 animate-pulse" />
+                            <Fingerprint className="w-5 h-5 text-purple-500 relative z-10" />
                         </div>
                         <div>
                             <h1 className="text-sm font-black text-white tracking-widest uppercase">
-                                COMMAND <span className="text-green-500">DECK</span>
+                                COMMAND <span className="text-purple-500">DECK</span>
                             </h1>
                             <span className="text-[9px] text-zinc-500 font-mono uppercase tracking-[0.2em] flex items-center gap-1">
-                                <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+                                <span className="w-1.5 h-1.5 bg-purple-500 rounded-full" />
                                 ONLINE
                             </span>
                         </div>
@@ -292,7 +292,7 @@ export const Profile: React.FC<ProfileProps> = ({
                             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay z-0" />
                             
                             {/* Accent Glows */}
-                            <div className="absolute top-0 right-0 w-40 h-40 bg-green-500/10 rounded-full blur-[80px]" />
+                            <div className="absolute top-0 right-0 w-40 h-40 bg-purple-500/10 rounded-full blur-[80px]" />
                             <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/10 rounded-full blur-[60px]" />
 
                             {/* Card Content */}
@@ -314,8 +314,8 @@ export const Profile: React.FC<ProfileProps> = ({
                                     <div className="text-right">
                                         <div className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">ACCESS PASS</div>
                                         <div className="flex items-center justify-end gap-1 mt-0.5">
-                                            <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                                            <span className="text-[8px] font-mono text-green-500/80 tracking-widest">SECURE</span>
+                                            <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" />
+                                            <span className="text-[8px] font-mono text-purple-500/80 tracking-widest">SECURE</span>
                                         </div>
                                     </div>
                                 </div>
@@ -326,7 +326,7 @@ export const Profile: React.FC<ProfileProps> = ({
                                         className="relative group/avatar cursor-pointer" 
                                         onClick={(e) => { e.stopPropagation(); playSound('click'); setIsEditingAvatar(true); }}
                                     >
-                                        <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-full animate-pulse" />
+                                        <div className="absolute inset-0 bg-purple-500/20 blur-xl rounded-full animate-pulse" />
                                         <div className={`relative w-16 h-16 rounded-2xl bg-zinc-900 border ${currentAvatar.border} flex items-center justify-center overflow-hidden shadow-lg transition-transform group-hover/avatar:scale-105`}>
                                             <CurrentAvatarIcon className={`w-8 h-8 ${currentAvatar.color}`} />
                                             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover/avatar:opacity-100 transition-opacity flex items-center justify-center">
@@ -354,19 +354,19 @@ export const Profile: React.FC<ProfileProps> = ({
                                                 initial={{ width: 0 }} 
                                                 animate={{ width: `${xpProgress}%` }} 
                                                 transition={{ duration: 1.5, ease: "easeOut" }}
-                                                className="h-full bg-gradient-to-r from-green-600 to-green-400 shadow-[0_0_8px_rgba(34,197,94,0.6)]" 
+                                                className="h-full bg-gradient-to-r from-purple-600 to-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.6)]" 
                                             />
                                         </div>
 
                                         {/* License Key Display */}
                                         <button 
                                             onClick={handleCopyKey}
-                                            className="w-full flex items-center justify-between bg-black/40 border border-white/10 rounded-lg px-2.5 py-1.5 group/key hover:border-green-500/30 transition-all active:scale-95"
+                                            className="w-full flex items-center justify-between bg-black/40 border border-white/10 rounded-lg px-2.5 py-1.5 group/key hover:border-purple-500/30 transition-all active:scale-95"
                                         >
-                                            <code className="text-[10px] font-mono text-zinc-300 tracking-[0.15em] truncate group-hover/key:text-green-400 transition-colors">
+                                            <code className="text-[10px] font-mono text-zinc-300 tracking-[0.15em] truncate group-hover/key:text-purple-400 transition-colors">
                                                 {accessKeyData?.key.slice(0, 4)}••••{accessKeyData?.key.slice(-4)}
                                             </code>
-                                            {copiedKey ? <Check className="w-3 h-3 text-green-500" /> : <Copy className="w-3 h-3 text-zinc-600 group-hover/key:text-white" />}
+                                            {copiedKey ? <Check className="w-3 h-3 text-purple-500" /> : <Copy className="w-3 h-3 text-zinc-600 group-hover/key:text-white" />}
                                         </button>
                                     </div>
                                 </div>
@@ -375,7 +375,7 @@ export const Profile: React.FC<ProfileProps> = ({
                                 <div className="mt-auto pt-3 border-t border-white/5 flex justify-between items-center">
                                     <span className="text-[8px] font-bold text-zinc-500 uppercase tracking-widest">{t.expiresIn}</span>
                                     <div className="flex items-center gap-2 bg-black/20 px-2 py-1 rounded-md border border-white/5">
-                                        <Clock className="w-3 h-3 text-green-500 animate-pulse" />
+                                        <Clock className="w-3 h-3 text-purple-500 animate-pulse" />
                                         <span className={`text-[10px] font-mono font-bold tracking-wider ${accessKeyData?.type === 'PERMANENT' ? 'text-yellow-500' : 'text-white'}`}>
                                             {keyTimeLeft}
                                         </span>
@@ -389,7 +389,7 @@ export const Profile: React.FC<ProfileProps> = ({
                 {/* 3. Performance Dashboard */}
                 <MotionDiv variants={itemVariants}>
                     <div className="flex items-center gap-2 mb-3 px-1">
-                        <Activity className="w-4 h-4 text-green-500" />
+                        <Activity className="w-4 h-4 text-purple-500" />
                         <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Performance Metrics</h3>
                     </div>
                     
@@ -498,10 +498,10 @@ export const Profile: React.FC<ProfileProps> = ({
                                 icon={Smartphone} 
                                 isActive={userProfile.preferences.haptics} 
                                 onToggle={() => togglePreference('haptics')}
-                                activeColorClass="from-green-500/30"
-                                activeBorderClass="border-green-500/50"
-                                activeTextClass="text-green-400"
-                                activeBgClass="bg-green-900/10"
+                                activeColorClass="from-purple-500/30"
+                                activeBorderClass="border-purple-500/50"
+                                activeTextClass="text-purple-400"
+                                activeBgClass="bg-purple-900/10"
                             />
                             <CyberToggle 
                                 label={t.notifications} 
@@ -531,7 +531,7 @@ export const Profile: React.FC<ProfileProps> = ({
                         <div className="relative z-10 space-y-2">
                             <div className="flex justify-between items-center border-b border-dashed border-zinc-800 pb-2">
                                 <span className="text-zinc-500 flex items-center gap-2"><DeviceIcon className="w-3 h-3" /> HW_ID</span>
-                                <span className="text-green-500">{deviceType.toUpperCase()}</span>
+                                <span className="text-purple-500">{deviceType.toUpperCase()}</span>
                             </div>
                             <div className="flex justify-between items-center border-b border-dashed border-zinc-800 pb-2">
                                 <span className="text-zinc-500 flex items-center gap-2"><MapPin className="w-3 h-3" /> REGION_LOC</span>
@@ -539,8 +539,8 @@ export const Profile: React.FC<ProfileProps> = ({
                             </div>
                             <div className="flex justify-between items-center">
                                 <span className="text-zinc-500 flex items-center gap-2"><Wifi className="w-3 h-3" /> NET_STATUS</span>
-                                <span className="text-green-500 font-bold flex items-center gap-1">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                                <span className="text-purple-500 font-bold flex items-center gap-1">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
                                     SECURE_TUNNEL
                                 </span>
                             </div>
@@ -611,11 +611,11 @@ export const Profile: React.FC<ProfileProps> = ({
                             className="bg-[#0c0c0e] border border-white/10 rounded-[2rem] p-6 w-full max-w-sm shadow-2xl relative overflow-hidden"
                             onClick={(e: React.MouseEvent) => e.stopPropagation()}
                         >
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 via-emerald-500 to-green-500 opacity-50" />
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-violet-500 to-purple-500 opacity-50" />
                             
                             <div className="text-center mb-6">
                                 <h3 className="text-sm font-black text-white uppercase tracking-widest flex items-center justify-center gap-2 mb-1">
-                                    <Fingerprint className="w-4 h-4 text-green-500" />
+                                    <Fingerprint className="w-4 h-4 text-purple-500" />
                                     {t.selectIdentity}
                                 </h3>
                                 <p className="text-[10px] text-zinc-500">CHOOSE YOUR AVATAR SIGNATURE</p>
@@ -633,13 +633,13 @@ export const Profile: React.FC<ProfileProps> = ({
                                         className={`
                                             aspect-square rounded-xl flex items-center justify-center border transition-all relative group
                                             ${currentAvatarId === avatar.id 
-                                                ? 'bg-green-500/10 border-green-500 shadow-[0_0_15px_rgba(34,197,94,0.2)]' 
+                                                ? 'bg-purple-500/10 border-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.2)]' 
                                                 : 'bg-zinc-900 border-white/5 hover:bg-zinc-800 hover:border-white/20'}
                                         `}
                                     >
                                         <avatar.icon className={`w-6 h-6 ${avatar.color} transition-transform group-hover:scale-110`} />
                                         {currentAvatarId === avatar.id && (
-                                            <div className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-green-500 rounded-full border-2 border-[#0c0c0e] flex items-center justify-center shadow-sm">
+                                            <div className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-purple-500 rounded-full border-2 border-[#0c0c0e] flex items-center justify-center shadow-sm">
                                                 <Check className="w-2.5 h-2.5 text-black stroke-[3]" />
                                             </div>
                                         )}

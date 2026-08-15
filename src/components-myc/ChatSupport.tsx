@@ -36,7 +36,7 @@ const AVATARS = [
     { id: 2, icon: Skull, color: 'text-red-400', bg: 'bg-red-900/40' },
     { id: 3, icon: Crown, color: 'text-yellow-400', bg: 'bg-yellow-900/40' },
     { id: 4, icon: Zap, color: 'text-blue-400', bg: 'bg-blue-900/40' },
-    { id: 5, icon: Bot, color: 'text-green-400', bg: 'bg-green-900/40' },
+    { id: 5, icon: Bot, color: 'text-purple-400', bg: 'bg-purple-900/40' },
     { id: 6, icon: Smile, color: 'text-pink-400', bg: 'bg-pink-900/40' },
     { id: 7, icon: Shield, color: 'text-cyan-400', bg: 'bg-cyan-900/40' },
     { id: 8, icon: Gamepad2, color: 'text-orange-400', bg: 'bg-orange-900/40' },
@@ -46,7 +46,7 @@ const AVATARS = [
     { id: 12, icon: Target, color: 'text-red-400', bg: 'bg-red-900/40' },
     { id: 13, icon: Cpu, color: 'text-cyan-400', bg: 'bg-cyan-900/40' },
     { id: 14, icon: Fingerprint, color: 'text-violet-400', bg: 'bg-violet-900/40' },
-    { id: 15, icon: Eye, color: 'text-emerald-400', bg: 'bg-emerald-900/40' },
+    { id: 15, icon: Eye, color: 'text-violet-400', bg: 'bg-violet-900/40' },
 ];
 
 export const ChatSupport: React.FC<ChatSupportProps> = ({ onBack, accessKeyData, language, userAvatarId }) => {
@@ -167,7 +167,7 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ onBack, accessKeyData,
   const UserIconComponent = currentUserAvatar.icon;
 
   return (
-    <div className="flex flex-col h-full relative bg-[#050505] overflow-hidden font-mono selection:bg-green-500/30">
+    <div className="flex flex-col h-full relative bg-[#050505] overflow-hidden font-mono selection:bg-purple-500/30">
         
         {/* HUD Header */}
         <div className="absolute top-0 left-0 right-0 z-50 p-2">
@@ -181,13 +181,13 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ onBack, accessKeyData,
 
                 <div className="flex flex-col items-center">
                     <div className="flex items-center gap-2">
-                        <Cpu className="w-4 h-4 text-green-500" />
+                        <Cpu className="w-4 h-4 text-purple-500" />
                         <span className="text-sm font-black text-white tracking-widest uppercase">
                             AI CORE
                         </span>
                     </div>
-                    <div className="flex items-center gap-2 text-[8px] font-bold text-green-500/80 uppercase tracking-[0.2em] mt-0.5">
-                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                    <div className="flex items-center gap-2 text-[8px] font-bold text-purple-500/80 uppercase tracking-[0.2em] mt-0.5">
+                        <span className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" />
                         Online • 14ms
                     </div>
                 </div>
@@ -219,11 +219,11 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ onBack, accessKeyData,
                     >
                         {/* Central AI Orb */}
                         <div className="relative mb-8">
-                            <div className="absolute inset-0 bg-green-500/20 blur-[50px] animate-pulse" />
-                            <div className="w-32 h-32 rounded-full border border-green-500/30 flex items-center justify-center relative bg-black/40 backdrop-blur-sm shadow-[0_0_30px_rgba(34,197,94,0.1)]">
-                                <div className="absolute inset-2 border border-dashed border-green-500/20 rounded-full animate-[spin_10s_linear_infinite]" />
-                                <div className="absolute inset-6 border border-dotted border-green-500/40 rounded-full animate-[spin_8s_linear_infinite_reverse]" />
-                                <Cpu className="w-12 h-12 text-green-400 relative z-10 drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
+                            <div className="absolute inset-0 bg-purple-500/20 blur-[50px] animate-pulse" />
+                            <div className="w-32 h-32 rounded-full border border-purple-500/30 flex items-center justify-center relative bg-black/40 backdrop-blur-sm shadow-[0_0_30px_rgba(168,85,247,0.1)]">
+                                <div className="absolute inset-2 border border-dashed border-purple-500/20 rounded-full animate-[spin_10s_linear_infinite]" />
+                                <div className="absolute inset-6 border border-dotted border-purple-500/40 rounded-full animate-[spin_8s_linear_infinite_reverse]" />
+                                <Cpu className="w-12 h-12 text-purple-400 relative z-10 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]" />
                             </div>
                         </div>
 
@@ -242,9 +242,9 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ onBack, accessKeyData,
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: i * 0.1 }}
                                     onClick={() => handleSend(s)}
-                                    className="px-3 py-3 rounded-lg bg-[#0c0c0e] border border-white/5 text-[10px] font-bold text-zinc-400 hover:text-green-400 hover:border-green-500/30 transition-all text-left flex items-center gap-2 group"
+                                    className="px-3 py-3 rounded-lg bg-[#0c0c0e] border border-white/5 text-[10px] font-bold text-zinc-400 hover:text-purple-400 hover:border-purple-500/30 transition-all text-left flex items-center gap-2 group"
                                  >
-                                    <Terminal className="w-3 h-3 text-zinc-600 group-hover:text-green-500 transition-colors" />
+                                    <Terminal className="w-3 h-3 text-zinc-600 group-hover:text-purple-500 transition-colors" />
                                     {s}
                                  </motion.button>
                              ))}
@@ -271,12 +271,12 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ onBack, accessKeyData,
                                         w-8 h-8 rounded-lg border flex items-center justify-center shrink-0 mt-1
                                         ${isMe 
                                             ? `bg-zinc-900 border-zinc-700` 
-                                            : `bg-green-900/20 border-green-500/30 shadow-[0_0_10px_rgba(34,197,94,0.1)]`}
+                                            : `bg-purple-900/20 border-purple-500/30 shadow-[0_0_10px_rgba(168,85,247,0.1)]`}
                                     `}>
                                         {isMe ? (
                                             <AvatarIcon className="w-4 h-4 text-zinc-400" />
                                         ) : (
-                                            <Cpu className="w-4 h-4 text-green-500" />
+                                            <Cpu className="w-4 h-4 text-purple-500" />
                                         )}
                                     </div>
 
@@ -293,7 +293,7 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ onBack, accessKeyData,
                                                 relative p-3 rounded-2xl text-xs leading-relaxed border cursor-pointer group transition-all
                                                 ${isMe 
                                                     ? 'bg-[#121214] border-white/10 text-zinc-200 rounded-tr-sm hover:border-white/20' 
-                                                    : 'bg-[#0c0c0e] border-green-500/20 text-green-100 rounded-tl-sm shadow-[0_0_20px_rgba(34,197,94,0.05)] hover:border-green-500/40'}
+                                                    : 'bg-[#0c0c0e] border-purple-500/20 text-purple-100 rounded-tl-sm shadow-[0_0_20px_rgba(168,85,247,0.05)] hover:border-purple-500/40'}
                                             `}
                                         >
                                             {msg.text}
@@ -319,18 +319,18 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ onBack, accessKeyData,
                                 animate={{ opacity: 1, y: 0 }}
                                 className="flex gap-3"
                             >
-                                <div className="w-8 h-8 rounded-lg bg-green-900/20 border border-green-500/30 flex items-center justify-center shrink-0">
-                                    <Loader2 className="w-4 h-4 text-green-500 animate-spin" />
+                                <div className="w-8 h-8 rounded-lg bg-purple-900/20 border border-purple-500/30 flex items-center justify-center shrink-0">
+                                    <Loader2 className="w-4 h-4 text-purple-500 animate-spin" />
                                 </div>
                                 <div className="flex flex-col items-start">
                                     <span className="text-[9px] font-bold uppercase tracking-wider text-zinc-600 mb-1 px-1">
                                         System AI
                                     </span>
-                                    <div className="bg-[#0c0c0e] border border-green-500/20 px-4 py-3 rounded-2xl rounded-tl-sm">
+                                    <div className="bg-[#0c0c0e] border border-purple-500/20 px-4 py-3 rounded-2xl rounded-tl-sm">
                                         <div className="flex gap-1">
-                                            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-bounce" />
-                                            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-bounce delay-75" />
-                                            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-bounce delay-150" />
+                                            <span className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-bounce" />
+                                            <span className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-bounce delay-75" />
+                                            <span className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-bounce delay-150" />
                                         </div>
                                     </div>
                                 </div>
@@ -362,7 +362,7 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ onBack, accessKeyData,
             {/* Input Bar */}
             <div className="relative flex items-center gap-2">
                 <div className="relative flex-1 group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-transparent rounded-xl opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent rounded-xl opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
                     <input
                         type="text"
                         value={inputText}
@@ -370,7 +370,7 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ onBack, accessKeyData,
                         onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                         placeholder={isAiTyping ? "System processing..." : "Enter system command..."}
                         disabled={isAiTyping}
-                        className="w-full bg-[#0c0c0e]/90 backdrop-blur-xl border border-white/10 rounded-xl py-3.5 pl-4 pr-12 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-green-500/30 transition-colors font-mono shadow-xl"
+                        className="w-full bg-[#0c0c0e]/90 backdrop-blur-xl border border-white/10 rounded-xl py-3.5 pl-4 pr-12 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-purple-500/30 transition-colors font-mono shadow-xl"
                     />
                     <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
                         {inputText.length > 0 && (
@@ -386,7 +386,7 @@ export const ChatSupport: React.FC<ChatSupportProps> = ({ onBack, accessKeyData,
                         p-3.5 rounded-xl border transition-all shadow-lg flex items-center justify-center
                         ${!inputText.trim() || isAiTyping 
                             ? 'bg-zinc-900 border-white/5 text-zinc-600' 
-                            : 'bg-green-600 border-green-500 text-white hover:bg-green-500 active:scale-95'}
+                            : 'bg-purple-600 border-purple-500 text-white hover:bg-purple-500 active:scale-95'}
                     `}
                 >
                     {isSending ? (
