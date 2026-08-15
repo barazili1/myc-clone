@@ -142,3 +142,74 @@
     color: var(--color-foreground);
   }
 }
+
+/* ===== EL HETAN theme (ported) ===== */
+@font-face {
+  font-family: "Ethnocentric";
+  src: url("https://db.onlinewebfonts.com/t/2c8b813b22e11500d43a593e921d7237.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jzoor";
+  src: url("https://alfont.com/wp-content/fonts/new-arabic-fonts//alfont_com_%D8%AE%D8%B7-%D8%AC%D8%B0%D9%88%D8%B1-%D9%81%D9%84%D8%A7%D8%AA-%D8%B9%D8%B1%D9%8A%D8%B6.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body {
+  background-color: #09090b;
+  color: #e4e4e7;
+  font-family: "Jzoor", "Cairo", sans-serif;
+}
+
+.font-ar {
+  font-family: "Jzoor", "Cairo", sans-serif !important;
+}
+.font-en {
+  font-family: "Ethnocentric", sans-serif;
+}
+
+.glass-panel {
+  background: rgba(24, 24, 27, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.neon-glow {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+}
+
+.bg-grid-moving {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-scroll 3s linear infinite;
+}
+
+@keyframes grid-scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -40px 40px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
