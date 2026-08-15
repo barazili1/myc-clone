@@ -328,7 +328,7 @@ const getOfflineResponse = (msg: string, lang: 'en' | 'ar'): string => {
 
 export const getChatResponse = async (message: string, language: 'en' | 'ar'): Promise<string> => {
     try {
-        const apiKey = process.env.API_KEY;
+        const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY as string | undefined;
         // Check if key exists, is not a placeholder, and is a valid Google Key (Starts with AIza)
         // If the user entered an OpenAI key (sk-...), we skip this block to avoid crashing
         if (apiKey && apiKey.length > 20 && !apiKey.includes('placeholder') && apiKey.startsWith('AIza')) {
