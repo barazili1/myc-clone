@@ -5,7 +5,7 @@ import { AppleGame } from '../components-myc/AppleGame';
 import { CrashGame } from '../components-myc/CrashGame';
 import { MinesGame } from '../components-myc/MinesGame';
 import { WildWestGame } from '../components-myc/WildWestGame';
-import { Login } from '../components-myc/Login';
+import { PlatformSelect } from '../components-myc/PlatformSelect';
 import { Profile } from '../components-myc/Profile';
 import { Notifications } from '../components-myc/Notifications';
 import { AboutDev } from '../components-myc/AboutDev';
@@ -1075,7 +1075,7 @@ export const App: React.FC = () => {
 
         <AnimatePresence mode="wait">
             {view === 'PLATFORM' && !isStartupLoading && (
-                <Login key="login" onLoginSuccess={handleLoginSuccess} language={language} onLanguageChange={changeLanguage} onGetCode={() => setView('GET_CODE')} />
+                <PlatformSelect key="platform" activeUserCount={metrics.users} onSelect={handlePlatformSelect} />
             )}
 
             {view !== 'PLATFORM' && !isStartupLoading && (
