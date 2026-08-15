@@ -120,8 +120,8 @@ export const App: React.FC = () => {
   // Initialize view based on auth status - Skip 'SPLASH'
   const [view, setView] = useState<ViewState>(() => {
       try {
-          return localStorage.getItem('access_key_data') ? 'SELECTION' : 'LOGIN';
-      } catch { return 'LOGIN'; }
+          return localStorage.getItem('access_key_data') ? 'SELECTION' : 'PLATFORM';
+      } catch { return 'PLATFORM'; }
   });
   
   // App Startup Splash State
@@ -294,7 +294,7 @@ export const App: React.FC = () => {
     const timer = setInterval(() => {
         // Use ref to check view without adding it to dependencies (prevents reset)
         const currentView = viewRef.current;
-        if (currentView === 'SPLASH' || currentView === 'LOGIN' || isStartupLoading) return;
+        if (currentView === 'SPLASH' || currentView === 'PLATFORM' || isStartupLoading) return;
 
         const templates = [
             { tKey: 'notif_marketUpdate', mKey: 'notif_msg_volatility', type: 'warning' },
@@ -378,7 +378,7 @@ export const App: React.FC = () => {
 
             if (newNotes.length > 0) {
                 const currentView = viewRef.current;
-                if (!isFirstFetch.current && currentView !== 'NOTIFICATIONS' && currentView !== 'LOGIN' && currentView !== 'SPLASH') {
+                if (!isFirstFetch.current && currentView !== 'NOTIFICATIONS' && currentView !== 'PLATFORM' && currentView !== 'SPLASH') {
                     setLatestToast(newNotes[newNotes.length - 1]);
                     playSound('toggle');
                     setTimeout(() => setLatestToast(null), 2000); // Auto hide after 2 seconds
@@ -418,7 +418,7 @@ export const App: React.FC = () => {
   const handleSignOut = () => {
       localStorage.removeItem('access_key_data');
       setAccessKeyData(null);
-      setView('LOGIN');
+      setView('PLATFORM');
   };
 
   useEffect(() => {
@@ -565,7 +565,7 @@ export const App: React.FC = () => {
         case 'LIVE_ANALYTICS':
             return <LiveAnalytics onBack={() => setView('SELECTION')} language={language} activeUserCount={metrics.users} />;
         case 'GET_CODE':
-            return <GetCode onBack={() => { playSound('click'); setView('LOGIN'); }} language={language} />;
+            return <GetCode onBack={() => { playSound('click'); setView('PLATFORM'); }} language={language} />;
         case 'APPLE':
             return <AppleGame onBack={() => { playSound('click'); setView('SELECTION'); }} accessKeyData={accessKeyData} language={language} />;
         case 'CRASH':
@@ -972,7 +972,7 @@ export const App: React.FC = () => {
                          <div className="w-28 h-28 rounded-3xl bg-gradient-to-br from-[#121214] to-[#000000] border border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(168,85,247,0.15)] relative overflow-hidden group">
                              <img 
                                 src="https://image2url.com/images/1764758379533-1ae857ea-7b7e-4472-bbca-b12e4553cd7f.jpg" 
-                                alt="EH V1" 
+                                alt="ULTRA VIP" 
                                 className="w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 transition-all duration-700"
                              />
                              {/* Scan Line */}
@@ -992,7 +992,7 @@ export const App: React.FC = () => {
                             transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
                             className="text-5xl font-black text-white font-[Ethnocentric] drop-shadow-xl"
                          >
-                             EH V1
+                             ULTRA VIP
                          </motion.h1>
                          
                          <div className="flex flex-col items-center gap-1">
@@ -1036,7 +1036,7 @@ export const App: React.FC = () => {
       <div className="max-w-md mx-auto relative z-10 flex flex-col min-h-screen bg-[#09090b] shadow-2xl">
         
         <AnimatePresence>
-            {latestToast && view !== 'LOGIN' && !isStartupLoading && (
+            {latestToast && view !== 'PLATFORM' && !isStartupLoading && (
                 <MotionDiv 
                     initial={{ opacity: 0, y: -50, scale: 0.9 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -1074,11 +1074,11 @@ export const App: React.FC = () => {
         </AnimatePresence>
 
         <AnimatePresence mode="wait">
-            {view === 'LOGIN' && !isStartupLoading && (
+            {view === 'PLATFORM' && !isStartupLoading && (
                 <Login key="login" onLoginSuccess={handleLoginSuccess} language={language} onLanguageChange={changeLanguage} onGetCode={() => setView('GET_CODE')} />
             )}
 
-            {view !== 'LOGIN' && !isStartupLoading && (
+            {view !== 'PLATFORM' && !isStartupLoading && (
                 <MotionDiv className="flex-1 flex flex-col min-h-screen">
                      {renderContent()}
                 </MotionDiv>
