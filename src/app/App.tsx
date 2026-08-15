@@ -415,6 +415,19 @@ export const App: React.FC = () => {
       setView('SELECTION');
   };
 
+  const handlePlatformSelect = (platform: string) => {
+      const data: AccessKey = {
+          key: platform,
+          isActive: true,
+          name: userProfile.username,
+          type: 'PERMANENT',
+      } as AccessKey;
+      localStorage.setItem('access_key_data', JSON.stringify(data));
+      localStorage.setItem('selected_platform', platform);
+      setAccessKeyData(data);
+      setView('SELECTION');
+  };
+
   const handleSignOut = () => {
       localStorage.removeItem('access_key_data');
       setAccessKeyData(null);
