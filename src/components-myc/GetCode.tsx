@@ -180,7 +180,7 @@ export const GetCode: React.FC<GetCodeProps> = ({ onBack, language }) => {
     };
 
     return (
-        <div className="flex-1 flex flex-col h-full bg-[#050505] relative overflow-hidden font-mono selection:bg-green-500/30">
+        <div className="flex-1 flex flex-col h-full bg-[#050505] relative overflow-hidden font-mono selection:bg-purple-500/30">
             {/* Header */}
             <div className="relative z-10 px-6 py-4 border-b border-white/5 bg-[#09090b]/90 backdrop-blur-xl flex items-center justify-between shadow-lg">
                 <button 
@@ -193,7 +193,7 @@ export const GetCode: React.FC<GetCodeProps> = ({ onBack, language }) => {
                     <h1 className="text-sm font-black text-white uppercase tracking-widest flex items-center gap-2">
                         {language === 'ar' ? "التحقق من الشروط" : "Verification"}
                     </h1>
-                    <span className="text-[9px] font-bold text-green-500 uppercase tracking-[0.2em] flex items-center gap-1">
+                    <span className="text-[9px] font-bold text-purple-500 uppercase tracking-[0.2em] flex items-center gap-1">
                         <ShieldCheck className="w-3 h-3" />
                         {language === 'ar' ? "بوابة آمنة" : "Secure Gateway"}
                     </span>
@@ -231,8 +231,8 @@ export const GetCode: React.FC<GetCodeProps> = ({ onBack, language }) => {
                                         <div className="space-y-4">
                                             {currentSteps.map((step, index) => (
                                                 <div key={index} className="flex gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5 group/step">
-                                                    <div className="mt-1 w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/5 group-hover/step:border-green-500/30 group-hover/step:bg-green-500/10 transition-colors shrink-0">
-                                                        <step.icon className="w-4 h-4 text-zinc-500 group-hover/step:text-green-500 transition-colors" />
+                                                    <div className="mt-1 w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/5 group-hover/step:border-purple-500/30 group-hover/step:bg-purple-500/10 transition-colors shrink-0">
+                                                        <step.icon className="w-4 h-4 text-zinc-500 group-hover/step:text-purple-500 transition-colors" />
                                                     </div>
                                                     <div className="flex-1 min-w-0">
                                                         <h3 className="text-xs font-bold text-white mb-0.5">{step.title}</h3>
@@ -241,10 +241,10 @@ export const GetCode: React.FC<GetCodeProps> = ({ onBack, language }) => {
                                                         {step.action === 'copy' && step.value && (
                                                             <button 
                                                                 onClick={() => handleCopy(step.value!, false)}
-                                                                className="mt-2 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/10 hover:border-green-500/30 transition-colors w-fit group/copy active:scale-95"
+                                                                className="mt-2 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/10 hover:border-purple-500/30 transition-colors w-fit group/copy active:scale-95"
                                                             >
-                                                                <code className="text-[11px] font-mono font-bold text-green-400">{step.value}</code>
-                                                                {isCopied ? <Check className="w-3 h-3 text-green-500" /> : <Copy className="w-3 h-3 text-zinc-500 group-hover/copy:text-white" />}
+                                                                <code className="text-[11px] font-mono font-bold text-purple-400">{step.value}</code>
+                                                                {isCopied ? <Check className="w-3 h-3 text-purple-500" /> : <Copy className="w-3 h-3 text-zinc-500 group-hover/copy:text-white" />}
                                                             </button>
                                                         )}
                                                     </div>
@@ -271,7 +271,7 @@ export const GetCode: React.FC<GetCodeProps> = ({ onBack, language }) => {
                                             className={`
                                                 relative w-full aspect-video rounded-2xl border-2 border-dashed transition-all duration-300 overflow-hidden group/upload
                                                 ${selectedImage 
-                                                    ? 'border-green-500/30 bg-zinc-900' 
+                                                    ? 'border-purple-500/30 bg-zinc-900' 
                                                     : 'border-zinc-800 hover:border-zinc-600 bg-zinc-900/50 hover:bg-zinc-900 cursor-pointer'}
                                             `}
                                         >
@@ -323,7 +323,7 @@ export const GetCode: React.FC<GetCodeProps> = ({ onBack, language }) => {
                                                 mt-6 w-full py-4 rounded-xl font-black text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all shadow-lg
                                                 ${!selectedImage || isSubmitting
                                                     ? 'bg-zinc-800 text-zinc-600 cursor-not-allowed border border-white/5' 
-                                                    : 'bg-green-500 hover:bg-green-400 text-black shadow-green-500/20 active:scale-[0.98]'}
+                                                    : 'bg-purple-500 hover:bg-purple-400 text-black shadow-purple-500/20 active:scale-[0.98]'}
                                             `}
                                         >
                                             {isSubmitting ? (
@@ -359,17 +359,17 @@ export const GetCode: React.FC<GetCodeProps> = ({ onBack, language }) => {
                                 className="flex flex-col items-center justify-center py-6"
                             >
                                 {/* Success Ticket */}
-                                <div className="w-full bg-[#0c0c0e] border border-green-500/30 rounded-[2rem] p-1 shadow-[0_0_50px_rgba(34,197,94,0.1)] relative overflow-hidden group">
+                                <div className="w-full bg-[#0c0c0e] border border-purple-500/30 rounded-[2rem] p-1 shadow-[0_0_50px_rgba(168,85,247,0.1)] relative overflow-hidden group">
                                     <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
                                     
                                     <div className="relative bg-[#09090b]/90 backdrop-blur-xl rounded-[1.8rem] p-8 flex flex-col items-center text-center">
                                         
                                         <div className="relative mb-6">
-                                            <div className="absolute inset-0 bg-green-500/20 rounded-full blur-xl animate-pulse" />
-                                            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-900 to-[#09090b] border border-green-500/50 flex items-center justify-center relative z-10 shadow-2xl">
-                                                <ShieldCheck className="w-10 h-10 text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
+                                            <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-xl animate-pulse" />
+                                            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-900 to-[#09090b] border border-purple-500/50 flex items-center justify-center relative z-10 shadow-2xl">
+                                                <ShieldCheck className="w-10 h-10 text-purple-500 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]" />
                                             </div>
-                                            <div className="absolute bottom-0 right-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center border-2 border-[#09090b] z-20">
+                                            <div className="absolute bottom-0 right-0 w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center border-2 border-[#09090b] z-20">
                                                 <Check className="w-3 h-3 text-black stroke-[4]" />
                                             </div>
                                         </div>
@@ -377,26 +377,26 @@ export const GetCode: React.FC<GetCodeProps> = ({ onBack, language }) => {
                                         <h2 className="text-xl font-black text-white uppercase tracking-widest mb-1">
                                             {language === 'ar' ? "تمت الموافقة" : "Access Granted"}
                                         </h2>
-                                        <p className="text-[10px] text-green-400 font-mono uppercase tracking-wider mb-8">
+                                        <p className="text-[10px] text-purple-400 font-mono uppercase tracking-wider mb-8">
                                             {language === 'ar' ? "هوية مؤقتة تم إنشاؤها" : "Temporary Identity Generated"}
                                         </p>
 
                                         <div 
                                             onClick={() => generatedKey && handleCopy(generatedKey, true)}
-                                            className="w-full bg-[#050505] rounded-xl border border-green-500/30 p-4 mb-6 cursor-pointer group/key hover:bg-green-900/5 transition-colors relative overflow-hidden"
+                                            className="w-full bg-[#050505] rounded-xl border border-purple-500/30 p-4 mb-6 cursor-pointer group/key hover:bg-purple-900/5 transition-colors relative overflow-hidden"
                                         >
-                                            <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-50" />
+                                            <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50" />
                                             
                                             <div className="flex items-center justify-between mb-2">
                                                 <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">Access Key</span>
                                                 <div className="flex items-center gap-1.5 text-[9px] font-bold text-zinc-500">
-                                                    {isKeyCopied ? <span className="text-green-500">COPIED</span> : <span>TAP TO COPY</span>}
+                                                    {isKeyCopied ? <span className="text-purple-500">COPIED</span> : <span>TAP TO COPY</span>}
                                                 </div>
                                             </div>
                                             
                                             <div className="flex items-center justify-center gap-3">
-                                                <Key className="w-5 h-5 text-green-600" />
-                                                <code className="text-lg sm:text-2xl font-black font-mono text-white tracking-widest drop-shadow-[0_0_8px_rgba(34,197,94,0.3)]">
+                                                <Key className="w-5 h-5 text-purple-600" />
+                                                <code className="text-lg sm:text-2xl font-black font-mono text-white tracking-widest drop-shadow-[0_0_8px_rgba(168,85,247,0.3)]">
                                                     {generatedKey}
                                                 </code>
                                             </div>

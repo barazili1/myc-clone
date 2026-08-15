@@ -191,7 +191,7 @@ export const MinesGame: React.FC<MinesGameProps> = ({ onBack, accessKeyData, lan
                                     {isSafe ? (
                                         <div className="animate-[zoomIn_0.3s_ease-out]">
                                             {difficulty === 'Easy' ? (
-                                                <Shield className="w-5 h-5 text-green-400 fill-green-400/20" />
+                                                <Shield className="w-5 h-5 text-purple-400 fill-purple-400/20" />
                                             ) : (
                                                 <Diamond className="w-5 h-5 text-cyan-400 fill-cyan-400/20" />
                                             )}
@@ -219,7 +219,7 @@ export const MinesGame: React.FC<MinesGameProps> = ({ onBack, accessKeyData, lan
                         `}
                     >
                         {difficulty === 'Easy' && (
-                            <MotionDiv layoutId="mode-bg" className="absolute inset-0 bg-green-500 rounded-lg" />
+                            <MotionDiv layoutId="mode-bg" className="absolute inset-0 bg-purple-500 rounded-lg" />
                         )}
                         <span className="relative z-10 flex items-center gap-1.5">
                             <Shield className="w-3 h-3" />
@@ -280,7 +280,7 @@ export const MinesGame: React.FC<MinesGameProps> = ({ onBack, accessKeyData, lan
                             >
                                 <div className="flex items-center justify-between mb-2">
                                     <div className="flex items-center gap-2">
-                                        <Clock className="w-3.5 h-3.5 text-green-500" />
+                                        <Clock className="w-3.5 h-3.5 text-purple-500" />
                                         <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">{t.safeSpots}</span>
                                     </div>
                                     <span className="text-xs font-mono font-bold text-white bg-white/5 px-2 py-0.5 rounded border border-white/5">{safeSteps}</span>
@@ -291,11 +291,11 @@ export const MinesGame: React.FC<MinesGameProps> = ({ onBack, accessKeyData, lan
                                     max={Math.max(1, 25 - mineCount)} 
                                     value={safeSteps} 
                                     onChange={handleStepsChange}
-                                    className="w-full h-1.5 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-green-500 hover:accent-green-400 transition-all"
+                                    className="w-full h-1.5 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-purple-500 hover:accent-purple-400 transition-all"
                                 />
                                 <div className="flex justify-between mt-1 text-[8px] font-mono text-zinc-600">
                                      <span>1 SPOT</span>
-                                     <span className="text-green-500">SAFE MODE</span>
+                                     <span className="text-purple-500">SAFE MODE</span>
                                      <span>{25 - mineCount} SPOTS</span>
                                 </div>
                             </MotionDiv>
@@ -337,7 +337,7 @@ export const MinesGame: React.FC<MinesGameProps> = ({ onBack, accessKeyData, lan
                     ${gameState === GameState.ANALYZING 
                         ? 'bg-zinc-800 cursor-not-allowed opacity-50' 
                         : difficulty === 'Easy'
-                            ? 'bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white shadow-green-900/20'
+                            ? 'bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-500 hover:to-violet-500 text-white shadow-purple-900/20'
                             : 'bg-gradient-to-r from-cyan-700 via-blue-700 to-cyan-800 hover:from-cyan-600 hover:to-blue-600 text-white shadow-cyan-900/20'
                     }
                     `}

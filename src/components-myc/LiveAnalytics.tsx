@@ -14,7 +14,7 @@ interface LiveAnalyticsProps {
 
 const REGIONS = [
     { name: 'NA East', code: 'US-VA', lat: 30, long: 25, color: 'text-blue-500' },
-    { name: 'EU West', code: 'DE-FR', lat: 35, long: 55, color: 'text-green-500' },
+    { name: 'EU West', code: 'DE-FR', lat: 35, long: 55, color: 'text-purple-500' },
     { name: 'Asia Pac', code: 'SG-JP', lat: 45, long: 85, color: 'text-purple-500' },
     { name: 'Mid East', code: 'AE-SA', lat: 40, long: 65, color: 'text-orange-500' }
 ];
@@ -102,11 +102,11 @@ export const LiveAnalytics: React.FC<LiveAnalyticsProps> = ({ onBack, language, 
                     </button>
                     <div>
                         <h1 className="text-sm font-black text-white uppercase tracking-widest flex items-center gap-2">
-                            <Activity className="w-4 h-4 text-green-500" />
+                            <Activity className="w-4 h-4 text-purple-500" />
                             {t.liveAnalytics}
                         </h1>
-                        <span className="text-[9px] text-green-500 font-bold uppercase tracking-[0.2em] flex items-center gap-1">
-                            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                        <span className="text-[9px] text-purple-500 font-bold uppercase tracking-[0.2em] flex items-center gap-1">
+                            <span className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" />
                             System Monitor Active
                         </span>
                     </div>
@@ -165,7 +165,7 @@ export const LiveAnalytics: React.FC<LiveAnalyticsProps> = ({ onBack, language, 
                         </div>
                         <div className="flex items-end justify-between">
                             <div className="flex flex-col">
-                                <span className={`text-2xl font-black ${latency < 50 ? 'text-green-400' : latency < 100 ? 'text-yellow-400' : 'text-red-400'}`}>
+                                <span className={`text-2xl font-black ${latency < 50 ? 'text-purple-400' : latency < 100 ? 'text-yellow-400' : 'text-red-400'}`}>
                                     {Math.round(latency)}<span className="text-sm text-zinc-500">ms</span>
                                 </span>
                                 <span className="text-[9px] text-zinc-500 font-bold">PING</span>
@@ -183,10 +183,10 @@ export const LiveAnalytics: React.FC<LiveAnalyticsProps> = ({ onBack, language, 
                 <div className="glass-panel p-5 rounded-3xl border border-white/5 relative overflow-hidden shadow-xl">
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-2">
-                            <Radio className="w-4 h-4 text-green-500 animate-pulse" />
+                            <Radio className="w-4 h-4 text-purple-500 animate-pulse" />
                             <span className="text-xs font-bold text-white uppercase tracking-wider">{t.signal} Stability</span>
                         </div>
-                        <span className="text-[10px] font-mono text-green-400 bg-green-500/10 px-2 py-0.5 rounded border border-green-500/20">99.98% UPTIME</span>
+                        <span className="text-[10px] font-mono text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">99.98% UPTIME</span>
                     </div>
 
                     <div className="h-28 w-full relative">
@@ -201,8 +201,8 @@ export const LiveAnalytics: React.FC<LiveAnalyticsProps> = ({ onBack, language, 
                         <svg className="w-full h-full overflow-visible relative z-10" preserveAspectRatio="none" viewBox="0 0 100 40">
                              <defs>
                                 <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stopColor="rgba(34, 197, 94, 0.5)" />
-                                    <stop offset="100%" stopColor="rgba(34, 197, 94, 0)" />
+                                    <stop offset="0%" stopColor="rgba(168, 85, 247, 0.5)" />
+                                    <stop offset="100%" stopColor="rgba(168, 85, 247, 0)" />
                                 </linearGradient>
                              </defs>
                              <motion.path 
@@ -214,7 +214,7 @@ export const LiveAnalytics: React.FC<LiveAnalyticsProps> = ({ onBack, language, 
                              <motion.path 
                                 d={getGraphPath()} 
                                 fill="none" 
-                                stroke="#22c55e" 
+                                stroke="#a855f7" 
                                 strokeWidth="2" 
                                 strokeLinecap="round"
                                 vectorEffect="non-scaling-stroke"
@@ -301,10 +301,10 @@ export const LiveAnalytics: React.FC<LiveAnalyticsProps> = ({ onBack, language, 
                      </div>
                      <div className="bg-[#121214] p-3 rounded-xl border border-white/5 flex flex-col gap-1">
                          <div className="flex items-center gap-2 text-[10px] text-zinc-500 font-bold uppercase">
-                             <Lock className="w-3 h-3 text-green-500" />
+                             <Lock className="w-3 h-3 text-purple-500" />
                              {t.encryption || "Security"}
                          </div>
-                         <div className="text-sm font-bold text-green-400 mt-1">AES-256 <span className="text-zinc-600">/</span> TLS</div>
+                         <div className="text-sm font-bold text-purple-400 mt-1">AES-256 <span className="text-zinc-600">/</span> TLS</div>
                      </div>
                 </div>
 
@@ -332,13 +332,13 @@ export const LiveAnalytics: React.FC<LiveAnalyticsProps> = ({ onBack, language, 
                                     className="flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors"
                                 >
                                     <div className="flex items-center gap-3">
-                                        <div className={`w-1.5 h-1.5 rounded-full ${p.game === 'Crash' ? 'bg-orange-500' : p.game === 'Mines' ? 'bg-blue-500' : 'bg-green-500'}`} />
+                                        <div className={`w-1.5 h-1.5 rounded-full ${p.game === 'Crash' ? 'bg-orange-500' : p.game === 'Mines' ? 'bg-blue-500' : 'bg-purple-500'}`} />
                                         <div className="flex flex-col">
                                             <span className="text-[10px] font-bold text-zinc-300">{p.user}</span>
                                             <span className="text-[9px] text-zinc-600 font-mono uppercase">{p.game} • {p.time}</span>
                                         </div>
                                     </div>
-                                    <span className="text-xs font-black text-green-400 font-mono">
+                                    <span className="text-xs font-black text-purple-400 font-mono">
                                         ${p.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
                                     </span>
                                 </MotionDiv>

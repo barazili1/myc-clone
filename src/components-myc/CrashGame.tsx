@@ -332,7 +332,7 @@ export const CrashGame: React.FC<CrashGameProps> = ({ onBack, accessKeyData, lan
             <div className="absolute top-4 left-4 right-4 flex justify-between z-20 pointer-events-none">
                 <div className="flex flex-col gap-1">
                      <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur px-2 py-1 rounded border border-white/10">
-                         <Wifi className={`w-3 h-3 ${isCrashed ? 'text-red-500' : 'text-green-500'}`} />
+                         <Wifi className={`w-3 h-3 ${isCrashed ? 'text-red-500' : 'text-purple-500'}`} />
                          <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">Signal: {isCrashed ? 'LOST' : 'GOOD'}</span>
                      </div>
                 </div>
@@ -373,7 +373,7 @@ export const CrashGame: React.FC<CrashGameProps> = ({ onBack, accessKeyData, lan
             <div className="col-span-8 grid grid-cols-2 gap-3">
                  <div className="bg-[#121214] border border-white/5 p-3 rounded-2xl flex flex-col relative overflow-hidden group">
                      <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
-                         <Target className="w-8 h-8 text-green-500" />
+                         <Target className="w-8 h-8 text-purple-500" />
                      </div>
                      <span className="text-[9px] uppercase text-zinc-500 font-bold tracking-wider mb-1 flex items-center gap-1">
                          <Shield className="w-3 h-3" />
@@ -383,7 +383,7 @@ export const CrashGame: React.FC<CrashGameProps> = ({ onBack, accessKeyData, lan
                          <span className={`text-2xl font-black ${result ? 'text-white' : 'text-zinc-700'}`}>
                              {result ? result.safeCashout.toFixed(2) : '--'}
                          </span>
-                         <span className="text-xs font-bold text-green-500">x</span>
+                         <span className="text-xs font-bold text-purple-500">x</span>
                      </div>
                  </div>
 
@@ -406,7 +406,7 @@ export const CrashGame: React.FC<CrashGameProps> = ({ onBack, accessKeyData, lan
                  {/* AI Analysis Console */}
                  <div className="col-span-2 bg-[#121214] border border-white/5 p-3 rounded-2xl relative overflow-hidden min-h-[80px] flex flex-col justify-center">
                      <div className="flex items-center gap-2 mb-1.5">
-                         <div className={`w-1.5 h-1.5 rounded-full ${gameState === GameState.ANALYZING ? 'bg-orange-500 animate-pulse' : 'bg-green-500'}`} />
+                         <div className={`w-1.5 h-1.5 rounded-full ${gameState === GameState.ANALYZING ? 'bg-orange-500 animate-pulse' : 'bg-purple-500'}`} />
                          <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-wider">{t.aiAnalysis}</span>
                      </div>
                      <p className="text-[10px] font-mono text-zinc-300 leading-relaxed line-clamp-2">
@@ -494,7 +494,7 @@ export const CrashGame: React.FC<CrashGameProps> = ({ onBack, accessKeyData, lan
                                                 <span className="text-[8px] text-zinc-500 uppercase font-bold">Safe Exit</span>
                                                 <span className="text-[10px] text-zinc-300 font-mono">{h.safeCashout}x</span>
                                              </div>
-                                             <div className={`px-2 py-1 rounded font-black text-sm min-w-[3.5rem] text-center ${h.predictedCrash >= 2.0 ? 'bg-green-500/10 text-green-500 border border-green-500/20' : 'bg-orange-500/10 text-orange-500 border border-orange-500/20'}`}>
+                                             <div className={`px-2 py-1 rounded font-black text-sm min-w-[3.5rem] text-center ${h.predictedCrash >= 2.0 ? 'bg-purple-500/10 text-purple-500 border border-purple-500/20' : 'bg-orange-500/10 text-orange-500 border border-orange-500/20'}`}>
                                                  {h.predictedCrash.toFixed(2)}x
                                              </div>
                                         </div>

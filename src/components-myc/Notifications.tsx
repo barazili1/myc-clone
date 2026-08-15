@@ -33,7 +33,7 @@ export const Notifications: React.FC<NotificationsProps> = ({ notifications, onM
     const getIcon = (type: string) => {
         switch (type) {
             case 'warning': return <AlertTriangle className="w-4 h-4 text-orange-400" />;
-            case 'success': return <Zap className="w-4 h-4 text-green-400" />;
+            case 'success': return <Zap className="w-4 h-4 text-purple-400" />;
             default: return <Info className="w-4 h-4 text-blue-400" />;
         }
     };
@@ -60,7 +60,7 @@ export const Notifications: React.FC<NotificationsProps> = ({ notifications, onM
                         onClick={onMarkAllRead}
                         className="group flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/10 text-[9px] font-bold text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all uppercase tracking-wider hover:border-white/20"
                     >
-                        <CheckCheck className="w-3.5 h-3.5 group-hover:text-green-500 transition-colors" />
+                        <CheckCheck className="w-3.5 h-3.5 group-hover:text-purple-500 transition-colors" />
                         <span>Read All</span>
                     </button>
                 )}

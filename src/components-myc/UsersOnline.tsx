@@ -28,7 +28,7 @@ const BASE_NAMES = [
 const REGIONS = ["Cairo", "Giza", "Alex", "Mansoura", "Tanta", "Suez", "Luxor", "Aswan", "Global", "Dubai", "Riyadh", "London"];
 const GAMES = ["Apple Fortune", "Crash Pro", "Mines AI", "Wild West", "Lobby"];
 const RANKS = ["Elite", "Pro", "Rookie", "VIP", "Master", "Legend"];
-const COLORS = ["text-red-500", "text-blue-500", "text-green-500", "text-purple-500", "text-orange-500", "text-pink-500", "text-cyan-500"];
+const COLORS = ["text-red-500", "text-blue-500", "text-purple-500", "text-purple-500", "text-orange-500", "text-pink-500", "text-cyan-500"];
 const PLATFORMS = ["Mobile", "Desktop", "Tablet"];
 
 interface OnlineUser {
@@ -165,15 +165,15 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({ onBack, language, acti
                     </button>
                     <div className="flex flex-col">
                         <h1 className="text-sm font-black text-white uppercase tracking-widest flex items-center gap-2">
-                            <Radio className="w-4 h-4 text-green-500 animate-pulse" />
+                            <Radio className="w-4 h-4 text-purple-500 animate-pulse" />
                             {t.liveNet}
                         </h1>
                         <span className="text-[9px] text-zinc-500 font-bold uppercase tracking-[0.2em]">{t.activeSquad}</span>
                     </div>
                 </div>
-                <div className="flex items-center gap-2 bg-green-900/10 px-2 py-1 rounded border border-green-500/20">
-                    <Wifi className="w-3 h-3 text-green-500" />
-                    <span className="text-[10px] font-bold text-green-400">SECURE</span>
+                <div className="flex items-center gap-2 bg-purple-900/10 px-2 py-1 rounded border border-purple-500/20">
+                    <Wifi className="w-3 h-3 text-purple-500" />
+                    <span className="text-[10px] font-bold text-purple-400">SECURE</span>
                 </div>
             </div>
 
@@ -183,16 +183,16 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({ onBack, language, acti
                 <div className="p-4 grid grid-cols-2 gap-3 mb-2">
                     {/* Radar Card */}
                     <div className="bg-[#0c0c0e] border border-white/5 rounded-2xl p-4 flex flex-col items-center justify-center relative overflow-hidden h-32">
-                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.1)_0%,transparent_70%)]" />
+                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.1)_0%,transparent_70%)]" />
                          
                          {/* Radar Circles */}
-                         <div className="absolute w-24 h-24 rounded-full border border-green-500/20" />
-                         <div className="absolute w-16 h-16 rounded-full border border-green-500/20" />
-                         <div className="absolute w-1 h-1 bg-green-500 rounded-full" />
+                         <div className="absolute w-24 h-24 rounded-full border border-purple-500/20" />
+                         <div className="absolute w-16 h-16 rounded-full border border-purple-500/20" />
+                         <div className="absolute w-1 h-1 bg-purple-500 rounded-full" />
                          
                          {/* Scanning Line */}
                          <div 
-                            className="absolute w-24 h-24 rounded-full bg-[conic-gradient(from_0deg,transparent_0deg,rgba(34,197,94,0.2)_30deg,transparent_30deg)]" 
+                            className="absolute w-24 h-24 rounded-full bg-[conic-gradient(from_0deg,transparent_0deg,rgba(168,85,247,0.2)_30deg,transparent_30deg)]" 
                             style={{ transform: `rotate(${radarRotation}deg)` }}
                          />
                          
@@ -200,7 +200,7 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({ onBack, language, acti
                          {users.slice(0, 5).map((u, i) => (
                              <div 
                                 key={u.id}
-                                className="absolute w-1 h-1 bg-green-400 rounded-full animate-pulse"
+                                className="absolute w-1 h-1 bg-purple-400 rounded-full animate-pulse"
                                 style={{ 
                                     top: `${50 + Math.sin(i * 20) * 30}%`, 
                                     left: `${50 + Math.cos(i * 20) * 30}%`,
@@ -209,7 +209,7 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({ onBack, language, acti
                              />
                          ))}
 
-                         <div className="absolute bottom-2 right-2 text-[8px] text-green-500 font-mono">SCANNING...</div>
+                         <div className="absolute bottom-2 right-2 text-[8px] text-purple-500 font-mono">SCANNING...</div>
                     </div>
 
                     {/* Quick Stats */}
@@ -233,7 +233,7 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({ onBack, language, acti
                             </div>
                             <div className="flex items-end gap-1">
                                 <span className="text-xl font-black text-white">42</span>
-                                <span className="text-[9px] text-green-500 mb-1">● Active</span>
+                                <span className="text-[9px] text-purple-500 mb-1">● Active</span>
                             </div>
                         </div>
                     </div>
@@ -257,16 +257,16 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({ onBack, language, acti
                                 className="group bg-[#0c0c0e] hover:bg-[#121214] border border-white/5 hover:border-white/10 rounded-lg p-2.5 cursor-pointer transition-all relative overflow-hidden"
                             >
                                 {/* Glitch Hover Effect */}
-                                <div className="absolute inset-0 bg-green-500/0 group-hover:bg-green-500/5 transition-colors" />
+                                <div className="absolute inset-0 bg-purple-500/0 group-hover:bg-purple-500/5 transition-colors" />
 
                                 <div className="flex items-center gap-3 relative z-10">
                                     {/* Avatar/Rank Indicator */}
                                     <div className={`
                                         w-10 h-10 rounded bg-zinc-900 border border-white/5 flex flex-col items-center justify-center shrink-0
-                                        ${user.rank === 'VIP' || user.rank === 'Legend' ? 'border-yellow-500/30 shadow-[0_0_10px_rgba(234,197,94,0.1)]' : ''}
+                                        ${user.rank === 'VIP' || user.rank === 'Legend' ? 'border-yellow-500/30 shadow-[0_0_10px_rgba(2168,85,247,0.1)]' : ''}
                                     `}>
                                         <span className={`text-[10px] font-black uppercase ${user.color.replace('text-', 'text-')}`}>{user.rank.substring(0,3)}</span>
-                                        <div className={`w-1.5 h-1.5 rounded-full mt-1 ${user.latency < 50 ? 'bg-green-500' : 'bg-yellow-500'}`} />
+                                        <div className={`w-1.5 h-1.5 rounded-full mt-1 ${user.latency < 50 ? 'bg-purple-500' : 'bg-yellow-500'}`} />
                                     </div>
 
                                     {/* Main Info */}
@@ -297,7 +297,7 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({ onBack, language, acti
                                     <div className="flex flex-col items-end gap-1 shrink-0">
                                         <div className="flex items-center gap-1">
                                              <Activity className="w-3 h-3 text-zinc-600" />
-                                             <span className={`text-xs font-black font-mono ${user.winRate > 70 ? 'text-green-400' : 'text-zinc-400'}`}>
+                                             <span className={`text-xs font-black font-mono ${user.winRate > 70 ? 'text-purple-400' : 'text-zinc-400'}`}>
                                                  {user.winRate}%
                                              </span>
                                         </div>
@@ -328,7 +328,7 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({ onBack, language, acti
                             className="bg-[#0c0c0e] border border-white/10 rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl relative"
                         >
                             {/* Decorative Lines */}
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 via-transparent to-green-500 opacity-50" />
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-transparent to-purple-500 opacity-50" />
                             <div className="absolute bottom-0 right-0 w-16 h-16 border-r border-b border-white/5 rounded-br-2xl" />
 
                             {/* Header */}
@@ -345,7 +345,7 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({ onBack, language, acti
                                     <div>
                                         <div className="flex items-center gap-2 mb-1">
                                             <h2 className="text-xl font-black text-white tracking-tight">{selectedUser.name}</h2>
-                                            <ShieldCheck className="w-4 h-4 text-green-500" />
+                                            <ShieldCheck className="w-4 h-4 text-purple-500" />
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <span className="px-1.5 py-0.5 bg-zinc-800 rounded text-[9px] font-bold text-zinc-400 uppercase tracking-wider">{selectedUser.rank}</span>
@@ -372,7 +372,7 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({ onBack, language, acti
                                     <div className="bg-[#121214] p-3 rounded-xl border border-white/5">
                                         <span className="text-[9px] text-zinc-500 uppercase font-bold tracking-wider block mb-1">Latency</span>
                                         <div className="flex items-center gap-2">
-                                            <Wifi className={`w-4 h-4 ${selectedUser.latency < 50 ? 'text-green-500' : 'text-yellow-500'}`} />
+                                            <Wifi className={`w-4 h-4 ${selectedUser.latency < 50 ? 'text-purple-500' : 'text-yellow-500'}`} />
                                             <span className="text-sm font-bold text-white font-mono">{selectedUser.latency}ms</span>
                                         </div>
                                     </div>
@@ -382,8 +382,8 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({ onBack, language, acti
                                     <div className="flex items-center justify-between mb-3">
                                         <span className="text-[10px] text-zinc-500 uppercase font-bold tracking-wider">Connection Telemetry</span>
                                         <div className="flex items-center gap-1">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                                            <span className="text-[9px] font-bold text-green-500">ENCRYPTED</span>
+                                            <div className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
+                                            <span className="text-[9px] font-bold text-purple-500">ENCRYPTED</span>
                                         </div>
                                     </div>
                                     
@@ -407,7 +407,7 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({ onBack, language, acti
                                                 <Gamepad2 className="w-3.5 h-3.5" />
                                                 <span>Activity</span>
                                             </div>
-                                            <span className="font-mono text-xs text-green-400">{selectedUser.game}</span>
+                                            <span className="font-mono text-xs text-purple-400">{selectedUser.game}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -416,7 +416,7 @@ export const UsersOnline: React.FC<UsersOnlineProps> = ({ onBack, language, acti
                                     <button className="flex-1 py-3 rounded-lg bg-zinc-900 border border-white/10 text-[10px] font-bold uppercase text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors flex items-center justify-center gap-2">
                                         <Eye className="w-3 h-3" /> Spectate
                                     </button>
-                                    <button className="flex-1 py-3 rounded-lg bg-green-900/10 border border-green-500/20 text-[10px] font-bold uppercase text-green-500 hover:bg-green-500/10 transition-colors flex items-center justify-center gap-2">
+                                    <button className="flex-1 py-3 rounded-lg bg-purple-900/10 border border-purple-500/20 text-[10px] font-bold uppercase text-purple-500 hover:bg-purple-500/10 transition-colors flex items-center justify-center gap-2">
                                         <Lock className="w-3 h-3" /> Trace Signal
                                     </button>
                                 </div>

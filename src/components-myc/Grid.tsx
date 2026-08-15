@@ -122,7 +122,7 @@ export const Grid: React.FC<GridProps> = ({
     <div className="relative w-full max-w-md mx-auto my-0">
       <div className={`
           flex flex-col gap-1 p-3 glass-panel rounded-2xl border shadow-2xl relative z-10 transition-all duration-500 overflow-visible
-          ${showSuccessFlash ? 'border-green-500/40 shadow-[0_0_40px_rgba(34,197,94,0.2)]' : 'border-white/10'}
+          ${showSuccessFlash ? 'border-purple-500/40 shadow-[0_0_40px_rgba(168,85,247,0.2)]' : 'border-white/10'}
           ${isFailure ? 'border-red-500/20 shadow-[0_0_20px_rgba(239,68,68,0.1)]' : ''}
       `}>
         
@@ -135,8 +135,8 @@ export const Grid: React.FC<GridProps> = ({
                exit={{ opacity: 0 }}
                className="absolute inset-0 z-0 pointer-events-none rounded-2xl overflow-hidden"
              >
-                <div className="absolute inset-0 bg-gradient-to-b from-green-500/10 to-transparent mix-blend-overlay" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.1)_0%,transparent_70%)] animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent mix-blend-overlay" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.1)_0%,transparent_70%)] animate-pulse" />
              </MotionDiv>
           )}
         </AnimatePresence>
@@ -241,9 +241,9 @@ export const Grid: React.FC<GridProps> = ({
                   // Determine hover style class based on type
                   let hoverClass = '';
                   if (isVisible && showResult) {
-                      if (isPath) hoverClass = 'hover:border-green-400 hover:shadow-[0_0_15px_rgba(34,197,94,0.4)]';
+                      if (isPath) hoverClass = 'hover:border-purple-400 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]';
                       else if (isBad) hoverClass = 'hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]';
-                      else hoverClass = 'hover:border-emerald-300/50 hover:shadow-[0_0_10px_rgba(16,185,129,0.2)]';
+                      else hoverClass = 'hover:border-violet-300/50 hover:shadow-[0_0_10px_rgba(139,92,246,0.2)]';
                   } else {
                       hoverClass = 'hover:border-zinc-500';
                   }
@@ -263,15 +263,15 @@ export const Grid: React.FC<GridProps> = ({
                         ${isInteractive || (isVisible && showResult) ? 'cursor-pointer' : ''}
                         ${(isVisible && showResult)
                           ? (isPath
-                              ? 'bg-green-500/20 border-green-500/50'
+                              ? 'bg-purple-500/20 border-purple-500/50'
                               : isBad 
                                 ? 'bg-[#2a0b0b] border-red-900/40' 
-                                : 'bg-emerald-900/10 border-emerald-500/10')
+                                : 'bg-violet-900/10 border-violet-500/10')
                           : 'bg-[#1c1c1f] border-white/5'}
                         ${!isAnalyzing && (isVisible || isInteractive) ? hoverClass : ''}
                       `}
                       style={{
-                        boxShadow: isVisible && isPath && showResult ? '0 0 10px rgba(34, 197, 94, 0.2)' : 'none'
+                        boxShadow: isVisible && isPath && showResult ? '0 0 10px rgba(168, 85, 247, 0.2)' : 'none'
                       }}
                     >
                       {(isVisible && showResult) ? (
@@ -283,12 +283,12 @@ export const Grid: React.FC<GridProps> = ({
                          >
                            {/* PREDICTED SAFE APPLE (Hero) */}
                            {isPath && (
-                               <Apple className="w-8 h-8 text-green-400 fill-green-500/40" />
+                               <Apple className="w-8 h-8 text-purple-400 fill-purple-500/40" />
                            )}
                            
                            {/* OTHER SAFE APPLES (Ghosted) */}
                            {isGood && (
-                               <Apple className="w-6 h-6 text-emerald-800/50 fill-emerald-900/20 opacity-70" />
+                               <Apple className="w-6 h-6 text-violet-800/50 fill-violet-900/20 opacity-70" />
                            )}
 
                            {/* ROTTEN APPLES */}
@@ -300,7 +300,7 @@ export const Grid: React.FC<GridProps> = ({
                          </MotionDiv>
                       ) : (
                         // Empty state dot
-                        <div className={`w-1.5 h-1.5 rounded-full ${isAnalyzing ? 'bg-green-500/40' : 'bg-zinc-800'}`} />
+                        <div className={`w-1.5 h-1.5 rounded-full ${isAnalyzing ? 'bg-purple-500/40' : 'bg-zinc-800'}`} />
                       )}
                     </div>
                   );
