@@ -51,7 +51,7 @@ export interface GridConfig {
   cols: number;
 }
 
-export type ViewState = 'SPLASH' | 'PLATFORM' | 'SELECTION' | 'APPLE' | 'CRASH' | 'MINES' | 'PROFILE' | 'NOTIFICATIONS' | 'ABOUT_DEV' | 'USERS_ONLINE' | 'WILD_WEST' | 'CHAT_SUPPORT' | 'LIVE_ANALYTICS' | 'GET_CODE';
+export type ViewState = 'SPLASH' | 'PLATFORM' | 'TERMS' | 'SELECTION' | 'APPLE' | 'CRASH' | 'MINES' | 'PROFILE' | 'NOTIFICATIONS' | 'ABOUT_DEV' | 'USERS_ONLINE' | 'WILD_WEST' | 'CHAT_SUPPORT' | 'LIVE_ANALYTICS' | 'GET_CODE';
 
 export type Language = 'ar' | 'en';
 
